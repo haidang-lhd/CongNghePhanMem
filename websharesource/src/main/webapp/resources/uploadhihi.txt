@@ -1,0 +1,10 @@
+social distancing
+drizzle
+vacuum cleaner
+drizzle
+cough potato
+colander
+
+
+
+varible name = value;
