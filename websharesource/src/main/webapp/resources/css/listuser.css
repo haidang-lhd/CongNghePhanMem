@@ -1,0 +1,17 @@
+#form-user input {
+    border: none;
+}
+a.btn-edit {
+    padding: 10px;
+    background: lightcoral;
+    color: white;
+}
+input:focus {
+    outline: none;
+}
+table td {
+    padding: 0px!important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background: white;
+}

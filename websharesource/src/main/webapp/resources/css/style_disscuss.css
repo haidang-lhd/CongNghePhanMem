@@ -1,0 +1,786 @@
+/* ----------------------------Common------------------------------ */
+:root{
+    --font:'Roboto', sans-serif;
+    --mau1:#cad2c5;
+    --mau2:#84a98c;
+    --mau3:#52796f;
+    --mau4:#354f52;
+    --mau5:#2f3e46;
+    --font12px:12px; /*View, post*/
+    --font14px:14px; 
+    --font16px:16px;/*titleProduct, menulittle*/
+    --font18px:18px; /*titleCategory*/
+    --font20px:20px;
+    --font24px:24px;   /*logo*/
+}
+* {
+
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+
+}
+ul, li {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+
+/* ----------------------------//Common------------------------------ */
+
+/* ----------------------------Header------------------------------ */
+header {
+    background-color: var(--mau4);
+}
+header .logo-header {
+    margin-top: 15px;
+}
+header .logo-header a {
+    font-size: var(--font24px);
+    color:var(--mau1);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+header .menu-header {}
+header .menu-header ul {
+    overflow: hidden;
+    margin-top: 20px;
+    width: 100%;
+}
+header .menu-header ul li {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    margin: 0px 30px;
+    border-radius: 15px;
+    background-color: var(--mau1);
+    text-align: center;
+}
+header .menu-header ul li a {
+    font-size: var(--font18px);
+    color:var(--mau4);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+header .search-header {
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+header .search-header input {
+    width: 100%;
+    padding: 5px;
+    background-color: var(--mau1);
+    border: none;
+    border-radius: 15px;
+}
+header .search-header input:focus{
+    outline: none;
+    color:var(--mau5);
+}
+
+header .search-header .icon-search {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+header .search-header .icon-search a {
+    color: var(--mau5);
+}
+header .login-header {
+    margin-top: 20px;
+}
+header .login-header div {
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--mau1);
+    margin-left: 30px;
+    text-align: center;
+}
+header .login-header div:nth-child(1) {width: 41.333%;float: left;}
+header .login-header div:nth-child(2) {width: 11.333%;float: left;}
+header .login-header div:nth-child(3) {width: 11.333%;float: left;}
+
+header .login-header a {
+    color: var(--mau4);
+    font-size: var(--font18px);
+    font-weight: 800;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+
+/* ----------------------------//Header------------------------------ */
+
+
+/* ----------------------------Navmenu------------------------------ */
+
+nav {background-color: var(--mau5);}
+nav .menu-nav {}
+nav .menu-nav ul {
+    overflow: hidden;
+}
+nav .menu-nav ul li {
+    display: inline-block;
+    float: left;
+    margin: 0px 140px 0px 0px;
+}
+
+nav .menu-nav ul li a {
+    color: var(--mau1);
+    font-size: var(--font16px);
+    text-decoration: none;
+}
+nav .menu-nav ul li a:hover {
+    color: turquoise;
+}
+.row {padding: 10px 0;}
+/* ----------------------------//Navmenu------------------------------ */
+
+/* ----------------------------section------------------------------ */
+section {background-color: var(--mau1);}
+section .left {
+    border: 2px solid var(--mau5);
+    border-radius: 10px;
+    background-color: white;
+    height: 100%;
+}
+section .left .top-left {border-bottom: 2px solid var(--mau5);
+}
+section .left .top-left h2 {    
+    color: var(--mau3);
+    font-size: var( --font16px);
+    margin-top: 8px;
+}
+section .left .bottom-left {
+    margin-top: 8px;
+}
+section .left .bottom-left>div {}
+section .left .bottom-left>div a {
+    color: var(--mau3);
+    font-size: var(--font14px);
+}
+section .left .bottom-left>div p {
+    display: inline-block;
+    float: right;
+    color: var(--mau3);
+    font-size: var(--font14px);
+}
+section .left .bottom-left>div a i {}
+section .left .bottom-left>div a span {}
+
+section .mid {position: relative;}
+section .mid .search {
+    position: relative;
+    overflow: hidden;
+}
+section .mid .search input {
+    width: 100%;
+    border-radius: 15px;
+    height: 30px;
+    border: none;
+    padding: 0 25px;
+}
+section .mid .search input:focus {
+    outline: none;
+} 
+section .mid .search div i {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+section .mid .post {
+    margin-top: 10px;
+}
+
+section .mid .post .place {
+    position: relative;
+    overflow: hidden;
+}
+section .mid .post .place div {position: relative;overflow: hidden;}
+section .mid .post .place div>div {position: absolute;top: 25px; left: 5px;}
+section .mid .post .place div>div img {width: 50%;background-color: #b5aaaa;border-radius: 100%;}
+section .mid .post .place div textarea {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 30px 0 0 60px;
+}
+section .mid .post .place textarea:focus {outline: none; padding: 5px 10px;}
+
+section .mid .post .button-post {width: 100%;}
+section .mid .post .button-post  button {
+    float: right;
+    background-color: var(--mau5);
+    color: #fff;
+    border: 1px solid var(--mau5);
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    height: 30px;
+}
+section .mid .frames-post {
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 96%;
+    margin-left: 15px;
+}
+section .mid .frames-post .title {background-color: #f6f6f6;padding: 10px;}
+section .mid .frames-post .title h5 {font-size: var(--font16px);}
+
+section .mid .frames-post .frames-infor {overflow: hidden; padding: 15px 0;}
+section .mid .frames-post .frames-infor span {
+    display: inline-block;
+    float: left;
+    font-size: var(--font14px);
+    padding-top: 5px;
+}
+section .mid .frames-post .frames-infor img {
+    display: inline-block;
+    float: left;
+    border: 1px solid #f6f6f6;
+    border-radius: 15px;
+    width: 5%;
+    background-color: #b5aaaa;
+}
+
+section .mid .frames-post .frames-content {position: relative; overflow: hidden;}
+section .mid .frames-post .frames-content textarea {
+    width: 100%;
+    border:none;
+    border-bottom: 2px solid #f6f6f6;
+    padding-left: 15px;
+}
+section .mid .frames-post .frames-content textarea:focus {
+    outline: none;
+}
+section .mid .frames-post .frames-content>div {
+    position: absolute;
+    bottom: 10px; 
+    right: 0px;
+}
+section .mid .frames-post .frames-content>div img {width: 50%;cursor: pointer;}
+
+section .mid .frames-post .button-images {padding: 0 15px;}
+section .mid .frames-post .button-images span {float: left;font-size: var(--font14px);}
+section .mid .frames-post .button-images i {float: right;color: #40C4F9;cursor: pointer;}
+
+section .mid .frames-post .button-post {
+    padding: 15px;
+    background-color: #f6f6f6;
+    height: 55px;
+}
+section .mid .frames-post .button-post button {
+    width: 100%;
+    background-color: #40C4F9;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+section .mid .posts {
+    background-color: #fff;
+    padding: 10px;
+}
+section .mid .posts .header-posts {}
+section .mid .posts .header-posts div {
+    width: 100%;
+    overflow: hidden;
+}
+section .mid .posts .header-posts div .avatar {
+    display: inline-block;
+    float: left;
+    width: 10%;
+}
+section .mid .posts .header-posts div .avatar img {
+    width: 100%;
+    border-radius: 100%;
+}
+section .mid .posts .header-posts div .name-time {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    margin-left: 10px;
+}
+section .mid .posts .header-posts div .name-time p {
+    font-size: var(--font16px);
+    font-weight: 600;
+    color: var(--mau3);
+    margin-bottom: 0;
+}
+section .mid .posts .header-posts div .name-time span {
+    font-size: var(--font12px);
+    opacity: 0.8;
+}
+
+section .mid .posts .content-posts {}
+section .mid .posts .content-posts .content {}
+section .mid .posts .content-posts .content span {font-size: var(--font16px);}
+
+section .mid .posts .images-posts {
+    margin: 5px 0;
+}
+section .mid .posts .images-posts .images {}
+section .mid .posts .images-posts .images img {width: 100%;}
+
+section .mid .posts .button-posts {overflow: hidden;}
+section .mid .posts .button-posts>div {
+    display: inline-block;
+    float: left;
+    padding: 0 15px 0 0;
+}
+section .mid .posts .button-posts>div i {cursor: pointer;}
+section .mid .posts .button-posts>div span {cursor: pointer;}
+
+section .mid .posts .button-posts .like {}
+section .mid .posts .button-posts .comment {}
+section .mid .posts .button-posts .share {}
+
+section .mid .posts .input-comment-posts {overflow: hidden;width: 100%;}
+section .mid .posts .input-comment-posts .images-comment {
+    background-color: #b5aaaa;
+    display: inline-block;
+    float: left;
+    border: 1px solid #f6f6f6;
+    border-radius: 15px;
+    width: 5%;
+}
+section .mid .posts .input-comment-posts .images-comment img {width: 100%;}
+
+section .mid .posts .input-comment-posts .input-comment {
+    display: inline-block;
+    float: left;
+    width: 90%;
+    margin-left: 5px;
+    position: relative;
+}
+section .mid .posts .input-comment-posts .input-comment textarea {
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #f6f6f6;
+}
+section .mid .posts .input-comment-posts .input-comment textarea:focus {
+    outline: none;
+}
+section .mid .posts .input-comment-posts .input-comment  div {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width: 20%;
+    display: none;
+}
+section .mid .posts .input-comment-posts .input-comment  div  button {
+    float: right;
+    background-color: var(--mau5);
+    color: #fff;
+    border: 1px solid var(--mau5);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 30px;
+    width: 50%;
+}
+section .mid .posts .input-comment-posts .input-comment  div  button:focus {
+    outline: none;
+}
+
+section .mid .posts .comment-posts {}
+section .mid .posts .comment-posts div {overflow: hidden;}
+section .mid .posts .comment-posts div .images-comment {
+    display: inline-block;
+    float: left;
+    border: 1px solid #f6f6f6;
+    border-radius: 15px;
+    width: 5%;
+}
+section .mid .posts .comment-posts div .images-comment a {}
+section .mid .posts .comment-posts div .images-comment a img {width: 100%;}
+
+section .mid .posts .comment-posts div .name-comment {
+    display: inline-block;
+    float: left;
+    width: 90%;
+    margin-left: 5px;
+    background-color: #f6f6f6;
+    padding: 10px;
+}
+section .mid .posts .comment-posts div .name-comment p {
+    font-size: var(--font16px);
+    font-weight: 600;
+    color: var(--cyan);
+    margin-bottom: 0;
+}
+section .mid .posts .comment-posts div .name-comment span {}
+
+section .mid .posts .comment-posts .button-comment {margin-left: 35px;}
+section .mid .posts .comment-posts .button-comment>div {
+    display: inline-block;
+    float: left;
+    padding: 0 15px 0 0;
+    font-size: var(--font12px);
+    margin-top: 5px;
+}
+section .mid .posts .comment-posts .button-comment>div span {cursor: pointer;}
+section .mid .posts .comment-posts .button-comment>div i {cursor: pointer;}
+section .mid .posts .comment-posts .button-comment>div p {margin-bottom: 0;}
+
+
+section .mid .posts .comment-posts .button-comment .like-comment {}
+section .mid .posts .comment-posts .button-comment .reply {}
+
+section .mid .posts .comment-posts .input-comment-posts {
+    margin-left: 30px;
+    width: 80%;
+    display: none;
+}
+section .mid .posts .comment-posts .input-comment-posts .images-comment {}
+section .mid .posts .comment-posts .input-comment-posts .images-comment a {}
+section .mid .posts .comment-posts .input-comment-posts .images-comment a img {}
+
+section .mid .posts .comment-posts .input-comment-posts .input-comment {}
+section .mid .posts .comment-posts .input-comment-posts .input-comment textarea {}
+section .mid .posts .comment-posts .input-comment-posts .input-comment div {
+    display: block;
+}
+
+
+section .right .exciting {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+section .section-content .menu-right .exciting h5 {
+    border-bottom: 1px solid var(--mau5);
+}
+section .right .exciting .list-exciting-post {}
+section .right .exciting .list-exciting-post ul {}
+section .right .exciting .list-exciting-post ul li {
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    height: 100px;
+    border: 1px solid var(--mau2);
+    border-radius: 10px;
+}
+section .right .exciting .list-exciting-post ul li>div {
+    width: 100%;
+    margin: 10px 0 0 10px;
+}
+}
+section .right .exciting .list-exciting-post ul li>div>div {}
+section .right .exciting .list-exciting-post ul li>div>div:nth-child(1) {
+    width: 30%;
+    float: left;
+    margin-right: 5px;
+}
+section .right .exciting .list-exciting-post ul li>div>div:nth-child(2) {
+    width: 66%;
+    float: left;
+}
+section .right .exciting .list-exciting-post ul li a {
+    color: var(--mau5);
+    font-size: var(--font14px);
+    text-decoration: none;
+}
+section .right .exciting .list-exciting-post ul li a:hover {
+    color: turquoise;
+}
+section .right .exciting .list-exciting-post ul li a img {
+    width: 100%;
+    height: 75px;
+}
+
+
+
+/* ----------------------------//section------------------------------ */
+
+/* ----------------------------footer------------------------------ */
+footer {
+    background-color: var(--mau4);
+}
+footer .menu-footer {
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+footer .menu-footer ul {overflow: hidden;}
+footer .menu-footer ul li {
+    display: inline-block;
+    float: left;
+    padding-right: 90px;
+}
+footer .menu-footer ul li a {
+    font-size: var(--font18px);
+    color: var(--mau1);
+    text-decoration: none;
+    
+}
+footer .menu-footer ul li a:hover {
+    color: var(--mau2);
+}
+footer .middle-footer {
+    margin-bottom: 30px;
+} 
+footer .middle-footer .row-middle-footer {} 
+footer .middle-footer span {
+    font-weight: bold;
+    color: var(--mau1);
+} 
+footer .middle-footer ul {
+    margin-top: 20px;
+}
+footer .middle-footer ul li {}
+footer .middle-footer ul li a {
+    font-size: var(--font16px);
+    color: var(--mau3);
+    text-decoration: none;
+}
+footer .middle-footer ul li a:hover {
+    color: var(--mau2);
+}
+
+footer .bottom-footer {
+    border-top: 1px solid var(--mau3);
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+footer .bottom-footer .address {
+    display: inline-block;
+    float: left;
+}
+footer .bottom-footer .address div {
+    margin: 10px 0;
+}
+footer .bottom-footer .address p {
+    margin-bottom: 0;
+    color: var(--mau3);
+}
+footer .bottom-footer .icon-footer {
+    display: inline-block; 
+    float: left;
+    margin: 10px 0;
+}
+
+footer .bottom-footer .icon-footer ul {overflow: hidden;width: 100%;}
+footer .bottom-footer .icon-footer ul li {
+    display: inline-block;
+    float: left;
+    padding-right: 20px;
+    width: 20%;
+}
+footer .bottom-footer .icon-footer ul li div {width: 100%;}
+footer .bottom-footer .icon-footer ul li div a {
+    font-size: 30px;
+    color: #fff;
+}
+footer .bottom-footer .icon-footer ul li div a img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+
+/* ----------------------------//footer------------------------------ */
+
+/* -----------------------------Posts---------------------------- */
+
+.post-menu-category {
+    padding: 8px;
+}
+
+.item-post-menu-category {
+    color: var(--mau4);
+    transition: color 1s;
+}
+
+.item-post-menu-category:hover {
+    text-decoration: none;
+    color: var(--mau3);
+}
+
+.item-post-menu-category::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #a8a8a8;
+    margin-left: 10px;
+}
+
+.item-post-menu-category:last-child::after {
+    border: none;
+}
+
+.post-title {
+    padding: 8px;
+    padding-left: 20px;
+    color: var(--mau5);
+}
+
+.post-img-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.wrap-post-info {
+    padding: 15px 0px;
+    background: url(../../resources/images/white_leather.png);
+}
+
+.post-info {
+    color: var(--mau3);
+}
+
+.post-info a {
+    color: var(--mau3);
+    font-weight: bold;
+    transition: color .5s;
+}
+
+.post-info a:hover {
+    text-decoration: none;
+    color: var(--mau4);
+}
+
+.post-content {
+    padding: 10px 0px;
+}
+
+.post-detail {
+    padding: 8px 0px;
+    color: var(--mau5);
+    font-size: 14px;
+}
+
+.post-detail a {
+    transition: color .5s;
+}
+
+.post-detail a:hover {
+    text-decoration: none;
+    color: var(--mau4);
+}
+
+.post-comment {
+    border-top: 1px solid #eeeeee;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-comment {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #bbbbbb;
+    padding: 5px 5px 5px 10px;
+    transition: border .5s;
+    position: relative;
+}
+
+.input-comment:focus {
+    border: 1px solid var(--mau3);
+    outline: none;
+}
+
+.btn-comment {
+    border: none;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    background: var(--mau3);
+    color: #fff;
+    font-size: 18px;
+}
+
+.post-comment-content {
+    border-top: 1px solid #eeeeee;
+    padding: 10px;
+    background: #efefef;
+}
+
+.item-post-detail {
+    padding: 0px 5px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.post-user-comment a {
+    color: var(--mau3);
+    font-weight: bold;
+    transition: color .5s;
+}
+
+.post-user-comment a:hover {
+    text-decoration: none;
+    color: var(--mau4);
+}
+
+.post-comment-reply {
+    margin: 0px 20px 10px 30px;
+    border-radius: 5px;
+    padding: 10px 0px;
+    background: #efefef;
+}
+
+.detail-reply {
+    text-align: right;
+    font-size: 14px;
+}
+
+#show-comment {
+	border: 1px solid #eee;
+	border-radius: 7px;
+	padding: 6px 10px;
+	display: inline-block;
+	cursor: pointer;
+	transition: background 0.5s;
+}
+
+#show-comment:hover {
+	background: #eee;
+}
+
+.img-loadding {
+	width: 70px;
+	padding: 10px;
+}
+
+/* -----------------------------Posts---------------------------- */
+
+/* -----------------------------responsive---------------------------- */
+
+@media only screen and (max-width: 600px) {} /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+
+  }
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    
+  } 
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+   
+  } 
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+  
+  }
+
+/* -----------------------------//responsive---------------------------- */b
+

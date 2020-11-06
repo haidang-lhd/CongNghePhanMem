@@ -1,0 +1,25 @@
+button.xoa {
+    border:1px solid white;
+    background: red;
+    padding:10px;
+}
+button.xoa i.fas.fa-trash {
+    font-size: 18px;
+}
+
+button.edit {
+    border:1px solid white;
+    padding: 10px;
+    background: #ffc93c;
+}
+.lop-ngoai {
+    background: #84A98C;
+    width: 100%;
+}
+button.edit i.fas.fa-pencil-alt {
+    font-size: 18px;
+    color: #2F3E46;
+}
+#body .nav-container {
+	left: -790px;
+}

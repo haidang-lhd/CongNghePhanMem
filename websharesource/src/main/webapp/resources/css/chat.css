@@ -1,0 +1,201 @@
+*{padding: 0;margin: 0; box-sizing: border-box;}
+:root{
+    --colorRed: red;
+    --font:'Roboto', sans-serif;
+    --mau1:#cad2c5;
+    --mau2:#84a98c;
+    --mau3:#52796f;
+    --mau4:#354f52;
+    --mau5:#2f3e46;
+    --font14px: 14px;
+    --font24px:24px;
+    --font16px:16px;
+}
+body{
+    font-size: var(--font14px);
+    font-family: var(--font);
+}
+/*  */
+.container-chat{
+    max-width: 1124px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+.box-message{
+	height: 300px;
+    border: 1px solid var(--mau4);
+    background-color: var(--mau1);
+    width: 500px;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+}
+/* chat left */
+.container-chat .chat-left{
+    float: left;
+    margin: 0 80px;
+    width: 30%;
+}
+.container-chat .chat-left .img-avatar{
+    padding: 50px;
+    border: 1px solid #84A98C;
+    position: relative;
+    margin-bottom: 5px;
+    height: 200px;
+}
+.container-chat .chat-left .img-avatar .main-img{
+    border: 1px solid;
+    height: 100px;
+    width: 150px;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    overflow: hidden;
+}
+.container-chat .chat-left .img-avatar .main-img .avatar{
+    height: 100px;
+    width: 150px;
+}
+.container-chat .chat-left .img-avatar button{
+    position: absolute;
+    bottom: 10px;
+    left: 35%;
+    text-decoration: none;
+    background-color: var(--mau2);
+    font-size: 20px;
+    width: 88px;
+    cursor: pointer;
+}
+
+.container-chat .chat-left .act-avatar{
+    border: 1px solid #84A98C;
+}
+.container-chat .chat-left .act-avatar ul{
+    text-align: center;
+}
+.container-chat .chat-left .act-avatar ul li{
+    list-style: none;
+    border-bottom: 1px solid #84A98C;
+    margin: 0 10px;
+    padding: 10px;
+}
+.t-link {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: var(--mau1);
+    cursor: pointer;
+  }
+  .active {
+     background-color: var(--mau3);
+}
+.container-chat .chat-left .act-avatar ul li:last-child{
+    border: none;
+}
+.container-chat .chat-left .act-avatar ul li a{
+    text-decoration: none;
+    color: var(--mau5);
+    display: block;
+}
+/* label chat */
+.container-chat .chat-right{
+    float: left;
+    width: 70%;
+}
+
+.label-chat{
+    background-color: var(--mau2);
+    margin: 0 0 25px 0;
+    border-radius: 50px;
+    position: relative;
+}
+.label-chat h1{
+    display: inline-block;
+    padding-left: 20px;
+}
+.label-chat h1 a{
+    color: var(--mau4);
+    text-decoration: none;
+    font-size: 40px;
+}
+.label-chat h1 a:hover{
+    text-decoration: none;
+    color: var(--mau5);
+}
+.label-chat .search-chat{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+.label-chat .search-chat #search-chat{
+    background-color: var(--mau1);
+    font-size: 20px;
+}
+.label-chat .search-chat button{
+   font-size: 20px;
+    background-color: var(--mau2);
+    border: none;
+    color: var(--mau1);
+}
+
+/* table chat*/
+.table-chat>#listMessage{
+	text-align: center;
+	background-color: var(--mau1)
+}
+th{
+	font-size: 20px;
+}
+td{
+	color: var(--mau3);
+	font-size: 18px;
+}
+td>a:hover{
+	color: var(--mau3);
+}
+p{
+	margin-bottom: 0;
+}
+
+.chat-right .creat-message{
+	text-align: right;
+    margin-top: 10px;
+}
+.chat-right .creat-message .fa-plus-circle{
+	font-size: 35px;
+    color: var(--mau3);
+    cursor: pointer;
+}
+/* Creat*/
+.table-creat .tab-creat {
+	margin-right: 50px;
+    float: right;
+    background-color: var(--mau1);
+    border: 1px solid var(--mau5);
+    width: 200px;
+    display: none;
+    transition: all 0.5s;
+}
+.table-creat .tab-creat .label-creat{
+	text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--mau4);
+    border-bottom: 1px solid var(--mau5);
+}
+.table-creat .tab-creat .goal{
+	text-align: center;
+    font-size: 18px;
+    color: var(--mau3);
+    font-weight: 400;
+}
+.table-creat .tab-creat .goal>a{
+	text-decoration: none;
+    color: var(--mau3);
+}
+.table-creat .tab-creat .goal>a>p{
+	    border-bottom: 1px solid var(--mau5);
+}

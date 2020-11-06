@@ -1,0 +1,149 @@
+.tablenav label {
+    display: none;
+}
+
+select#bulk-action-selector-top {
+    width: 56%;
+    padding: 10px;
+}
+
+select#filter-by-date {
+    margin-left: 18px;
+    display: inline-block;
+    padding: 10px;
+}
+
+input#doaction {
+    margin-right: 20px;
+    display: inline-block;
+    padding: 2%;
+    margin-left: 4%;
+}
+.content-wrapper h3 {
+    font-size: 28px;
+}
+ 
+a#home-tab {
+    color: #2F3E46;
+    font-size: 18px;
+}
+
+a#profile-tab {
+    color: #2F3E46;
+}
+a.nav-link.active {
+}
+
+li.nav-item {
+    width: 100%;
+    background: white;
+}
+
+.nav-tabs .nav-item.show .nav-link {
+    background: #CAD2C5;
+}
+a#contact-tab {
+    color: #2F3E46;
+    font-size: 18px;
+}
+
+.alignleft.actions.bulkactions {
+    display: inline-block;
+    float: left;
+}
+
+.tablenav.top {
+    padding: 20px;
+}
+
+select#cat {
+    display: inline-block;
+    margin-left: 4%;
+    padding: 2%;
+}
+
+input#post-query-submit {
+    display: inline-block;
+    padding: 2%;
+    margin-left: 4%;
+    float: left;
+}
+
+.tablenav-pages.one-page {
+    display: inline-block;
+    float: right;
+}
+
+.alignleft.actions {
+    display: inline-block;
+}
+td.duyet {
+    color: green;
+    font-weight: 700;
+}
+
+td.chua-duyet {
+    color: red;
+    font-weight: 700;
+}
+
+button.duyet-bai {
+    border: 1px solid white;
+    margin-left: 20px;
+    padding: 8px;
+    background: #84A98C;
+}
+button.add {
+    width: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: black;
+    color: #CAD2C5;
+}
+.duyet-bai a {
+    color: black;
+}
+td.active.tieu-de span {
+    padding-left: 10px;
+    color: #2F3E46;
+    font-weight: 500;
+}
+
+td.tac-gia {
+    color: #2F3E46;
+    font-weight: 500;
+}
+
+td.ten {
+    font-weight: 500;
+}
+
+td.chuyen-muc {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+td.ngay-dang {
+    font-weight: 500;
+}
+
+td.xu-ly {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+.xu-ly a {
+    text-decoration: none;
+    color: #84A98C;
+    font-weight: 500;
+}
+.lop-ngoai {
+    background: #84A98C;
+    width: 100%;
+}
+.content-wrapper {
+    margin-left: 37px;
+    margin-top: 32px;
+}

@@ -1,0 +1,54 @@
+section {
+    padding: 50px;
+}
+
+input#user_login {
+    padding: 1%;
+    width: 100%;
+}
+
+input#first_name {
+    width: 100%;
+    margin: 26px 0px 0px 0px;
+    padding: 1%;
+}
+
+input#last_name {
+    width: 100%;
+    padding: 1%;
+    margin: 20px 0px;
+}
+
+input#nickname {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 26px;
+}
+
+select#display_name {
+    padding: 10px;
+}
+input#email {
+}
+
+input#email {
+    width: 100%;
+    padding: 1%;
+    margin-left: 2%;
+}
+
+textarea#description {
+    width: 100%;
+    margin-left: 2%;
+}
+div#profile-page {
+    display: inline-block;
+    float: left;
+}
+
+.description a {
+    display: none;
+}
+th label {
+    width: 191px;
+}

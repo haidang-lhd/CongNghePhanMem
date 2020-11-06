@@ -1,0 +1,124 @@
+
+*{padding: 0;margin: 0; box-sizing: border-box;}
+:root{
+    --colorRed: red;
+    --font:'Roboto', sans-serif;
+    --mau1:#cad2c5;
+    --mau2:#84a98c;
+    --mau3:#52796f;
+    --mau4:#354f52;
+    --mau5:#2f3e46;
+    --font14px: 14px;
+    --font24px:24px;
+    --font16px:16px;
+}
+body{
+    font-size: var(--font14px);
+    font-family: var(--font);
+}
+/*  */
+
+.container-tag{
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 50px;
+    position: relative;
+}
+.label-tag{
+    background-color: var(--mau2);
+    margin: 0 20px 25px 25px;
+    border-radius: 50px;
+    position: relative;
+    text-align: center;
+}
+.label-tag h1{
+    display: inline-block;
+    padding-left: 20px;
+}
+.label-tag h1 a{
+    color: var(--mau5);
+}
+.label-tag h1 a:hover{
+    text-decoration: none;
+    color: var(--mau4);
+}
+/* table tag */
+.container-tag .table-tag{
+    padding-bottom: 35px;
+}
+.container-tag .table-tag table{
+    margin: 35px;
+    text-align: center;
+    background-color: var(--mau1);
+}
+.table-tag td>a{
+    color: var(--mau4);
+}
+span{
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    padding: 5px;
+    background-color: var(--mau2);
+    border-radius: 10px;
+}
+span>a {
+    color: var(--mau4);
+}
+span>a:hover {
+    color: var(--mau3);
+    text-decoration: none;
+}
+/* //Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container-tag{
+        max-width: 575px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 50px;
+        position: relative;
+    }
+    .label-tag{
+        background-color: var(--mau2);
+        margin: 0 20px 25px 25px;
+        border-radius: 50px;
+        position: relative;
+        text-align: center;
+    }
+    .label-tag h1{
+        display: inline-block;
+        padding-left: 20px;
+    }
+    .label-tag h1 a{
+        color: var(--mau5);
+    }
+    .label-tag h1 a:hover{
+        text-decoration: none;
+        color: var(--mau4);
+    }
+    /* table tag */
+    .container-tag .table-tag table{
+        margin: 10px;
+        text-align: center;
+        background-color: var(--mau1);
+    }
+    .table-tag td>a{
+        color: var(--mau4);
+    }
+    span{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding: 5px;
+        background-color: var(--mau2);
+        border-radius: 10px;
+    }
+    span>a {
+        color: var(--mau4);
+    }
+    span>a:hover {
+        color: var(--mau3);
+        text-decoration: none;
+    }
+ }

@@ -1,0 +1,192 @@
+.infor-bai-viet {
+    padding:40px 50px;
+    width:100%;
+    overflow:hidden;
+}
+.infor-bai-viet .left {
+    width:70%;
+    float:left;
+    display:inline-block;
+    overflow: hidden;
+}
+.right .card-body {
+    background: white;
+}
+td {
+    background: white;
+}
+span.red {
+    color:red;
+}
+
+button.save {
+    color: #CAD2C5;
+    background: #2F3E46;
+    padding: 2%;
+    margin: 0%;
+}
+
+button.view {
+    color: #CAD2C5;
+    background: #2F3E46;
+    padding: 2%;
+    margin-left: 46%;
+}
+
+button.move {
+    color: #CAD2C5;
+    background: #2F3E46;
+    margin-right: 46%;
+    width: 24%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+input#components-form-token-input-3 {
+    width: 474%;
+    height: 144px;
+    margin-bottom: 25px;
+}
+span.author {
+    padding-left: 20px;
+    font-size: 26px;
+}
+input#submit {
+    padding: 10px;
+}
+span.author-name {
+    font-size: 25px;
+    padding-left: 21px;
+}
+button.pub {
+    background: #2F3E46;
+    padding: 0%;
+    margin-left: 5%;
+    margin-top: -3%;
+    width: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+form div a span {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #2F3E46;
+}
+form div a i {
+    padding-right: 13px;
+    color: black;
+}
+
+form div a {
+    color: white;
+}
+.infor-bai-viet .right {
+    width:30%;
+    float:left;
+    display:inline-block;
+}
+.bai-viet input[type="text"] {
+    border: 1px solid black;
+    width: 99%;
+    padding: 18px;
+}
+
+input[type="date"] {
+    padding: 22px;
+    width: 99%;
+}
+
+.bai-viet label {
+    float: left;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 0px;
+    display: block;
+}
+
+ select#chuyen-muc {
+    border: 1px solid #000;
+    padding: 20px;
+    width: 99%;
+}
+
+button.add-image {
+    border-radius: 8px;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    background: #CAD2C5;
+    margin: 20px;
+    padding: 20px;
+    border: none;
+}
+
+i.fas.fa-photo-video {
+    padding-right: 20px;
+    color: #354F52;
+}
+
+.upload-image {
+    margin-bottom: 20px;
+    display: block;
+    width: 99%;
+    border: 1px solid #354F52;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.image-post {
+    display: inline-block;
+    width: 20%;
+}
+form label {color: #2F3E46;}
+.lop-ngoai {
+    background: #84A98C;
+    width: 100%;
+}
+label.components-form-token-field__label {color: #2F3E46;}
+
+.image-post img {
+ width: 100%;
+ padding-left: 85px;
+ }
+ form div {
+    text-align: left;
+    margin-top: 20px;
+}
+div#headingFive {
+    padding-left: 0%;
+}
+
+div#headingSix {
+    padding-left: 0%;
+}
+input#vehicle2 {
+    display: inline-block;
+    margin-left: 22px;
+}
+
+input#vehicle1 {
+    margin-left: 23px;
+}
+div#headingSeven {
+    padding-left: 0%;
+}
+.author {
+    display: block;
+    float: left;
+}
+
+div.author-name {
+    display: block;
+    padding-right: 88%;
+    text-align: left;
+}
+.form-group{
+	margin-bottom: 0;
+}
+form div{
+	margin-top:0;
+}
+form > label{
+	margin-top:20px;
+}

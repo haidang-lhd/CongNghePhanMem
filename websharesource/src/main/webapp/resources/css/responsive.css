@@ -1,0 +1,119 @@
+
+/*mobile*/
+@media only screen and (max-width: 480px) {
+   /* *{background:orange;}*/
+
+table.table.table-striped {
+    display: none;
+}
+
+td.active.tieu-de {
+}
+
+.userid {
+    width: 46%;
+}
+
+.box {
+    width: 100%;
+}
+
+i.fas.fa-cloud-download-alt {
+    font-size: 26px;
+}
+
+i.fas.fa-users {
+    font-size: 20px;
+}
+
+.infor-box h4 {
+    font-size: 18px;
+}
+
+.infor-box {
+    width: 100%;
+}
+
+h4 {}
+
+div#container {
+    width: 100%!important;
+}
+
+a {}
+
+
+
+
+    //css rule for smartphone
+    }
+
+@media screen and (max-width: 767px) and (min-width: 481px) {
+ /*   *{background:skyblue;}*/
+
+.lop-ngoai {}
+
+div#container {
+    width: 100%!important;
+}
+
+
+
+
+
+.right {
+    display: block!important;
+    width: 100%!important;
+}
+
+.nav-container {
+    display: block;
+    width: 100%!important;
+    left: -650px;
+}
+
+.left {}
+
+    //css Rule for tablet
+    } 
+   
+@media screen (max-width:1343px) and (min-width: 767px) {
+    .nav-container,
+    #container {
+        width:32%!important;
+    }
+}
+@media only screen and (min-width: 768px) {
+   /*  *{background:skyblue;}*/
+
+input#components-form-token-input-3 {
+    width: 381%;
+}
+
+   
+ //css Rule for pc
+
+
+
+
+    
+  } 
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 1024px) {
+  /*  *{background:Red;}*/
+  } 
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+  /*  *{background:pink;}*/
+
+button.view {
+    display: inline-block!important;
+   
+}
+
+button.pub {
+
+}
+
+
+  }

@@ -1,0 +1,68 @@
+input#tag-name {}
+
+section {}
+select#chuyen-muc {
+    padding: 10px 629px 10px 10px;
+}
+div#col-left {
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+.tablenav-pages.no-pages {display: none;}
+
+label.screen-reader-text {
+    display: none;
+}
+
+select#bulk-action-selector-top {
+    padding: 10px;
+}
+
+input#doaction {
+    padding: 10px;
+}
+
+select#bulk-action-selector-bottom {
+    padding: 10px;
+}
+
+input#doaction2 {
+    padding: 10px;
+}
+div#col-right {
+    display: inline-block;
+    float: left;
+    width: 60%;
+}
+
+.form-field label {
+    font-weight: 700;
+    display: block;
+    color: #2F3E46;
+}
+
+input#tag-name {
+    padding: 10px;
+    width: 96%;
+}
+
+input#tag-slug {
+    width: 95%;
+    padding: 10px;
+}
+
+textarea#tag-description {
+    width: 95%;
+}
+
+section {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+input#submit {
+    background: #CAD2C5;
+    padding: 10px;
+    border: none;
+}
