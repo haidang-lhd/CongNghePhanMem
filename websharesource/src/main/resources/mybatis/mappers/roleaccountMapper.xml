@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.roleaccountMapper">
+
+	<resultMap type="roleaccountVO" id="roleaccountResult">
+		<result property="roleaccount_id" column="roleaccount_id"/>
+		<result property="roleaccount_name" column="roleaccount_name"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="roleaccountResult">
+		<![CDATA[
+			select * from roleaccount order by roleaccount_id
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="roleaccountResult" parameterType="int">
+		<![CDATA[
+			select * from roleaccount where roleaccount_id = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="roleaccountVO">
+	<![CDATA[
+	insert into roleaccount(roleaccount_name)
+	values(#{roleaccount_name})
+	]]>
+	</insert>
+	<update id="update" parameterType="roleaccountVO">
+	<![CDATA[
+		update roleaccount set
+			roleaccount_name=#{roleaccount_name},
+		where roleaccount_id = #{roleaccount_id}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from roleaccount 
+		where roleaccount_id = #{roleaccount_id}
+	]]>
+	</delete>
+	
+</mapper>

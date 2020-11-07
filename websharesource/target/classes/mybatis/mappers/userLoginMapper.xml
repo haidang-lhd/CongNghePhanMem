@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.userLoginMapper">
+
+	<resultMap type="userLoginVO" id="userLoginResult">
+		<result property="userid" column="userid" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="status" column="status" />
+		<result property="roleid" column="roleid" />
+		<result property="fbid" column="fbid" />
+		<result property="email" column="email" />
+		<result property="emailid" column="emailid" />
+		<result property="roleaccount_name" column="roleaccount_name" />
+	</resultMap>
+
+	<select id="selectLogin" resultMap="userLoginResult"
+		parameterType="String">
+		<![CDATA[
+			SELECT
+				user.userid, user.username,user.fbid, user.password, user.status, role_user.roleid, role.roleaccount_name
+			FROM
+				role_user, role, user
+			WHERE
+				role_user.roleid = role.roleid
+			AND
+				role_user.userid = user.userid
+			AND
+				username = #{username}
+		]]>
+	</select>
+
+	<select id="selectLoginFB" resultMap="userLoginResult"
+		parameterType="String">
+		<![CDATA[
+			SELECT
+				user.userid, user.username,user.fbid, user.password, user.status, role_user.roleid, role.roleaccount_name
+			FROM
+				role_user, role, user
+			WHERE
+				role_user.roleid = role.roleid
+			AND
+				role_user.userid = user.userid
+			AND 
+			fbid = #{fbid}
+		]]>
+	</select>
+
+	<select id="selectLoginGmail" resultMap="userLoginResult"
+		parameterType="String">
+		<![CDATA[
+			SELECT
+				user.userid, user.username,user.fbid,user.email, user.password, user.status, role_user.roleid, role.roleaccount_name
+			FROM
+				role_user, role, user
+			WHERE
+				role_user.roleid = role.roleid
+			AND
+				role_user.userid = user.userid
+			AND 
+			emailid = #{emailid}
+			]]>
+	</select>
+	<!-- @Author Chi -->
+	<select id="selectAll" resultMap="userLoginResult"
+		parameterType="int">
+		<![CDATA[
+		
+		SELECT user.userid, username,phone,email, status,money, roleaccount_name ,phone FROM user
+		INNER JOIN role_user
+		ON user.userid = role_user.userid
+		INNER JOIN role
+		ON role_user.roleid = role.roleid
+		order by userid
+		
+		]]>
+	</select>
+
+	<select id="selectOneByRole" resultMap="userLoginResult"
+		parameterType="int">
+		<![CDATA[
+		SELECT user.userid, username,phone,email, status, roleaccount_name FROM user
+		INNER JOIN role_user
+		ON user.userid = role_user.userid
+		INNER JOIN role
+		ON role_user.roleid = role.roleid
+		where user.userid=#{userid}
+		
+		]]>
+	</select>
+
+	<update id="update" parameterType="userLoginVO">
+		<![CDATA[
+		UPDATE user 
+		SET 
+	  		username=#{username},
+			phone=#{phone},
+			email=#{email},
+			status=#{status}
+		WHERE 
+	   		userid=#{userid} 
+		]]>
+	</update>
+
+
+	<select id="selectCount" resultMap="userLoginResult"
+		parameterType="String">
+		<![CDATA[
+			SELECT * FROM user WHERE username LIKE '%' #{key} '%'
+		]]>
+	</select>
+</mapper>

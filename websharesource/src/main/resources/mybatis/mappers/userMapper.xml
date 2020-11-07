@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- author nguyenthai -->
+
+<mapper namespace="mappers.userMapper">
+	<resultMap type="userVO" id="userResult">
+		<result property="userid" column="userid" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="status" column="status" />
+		<result property="avatar" column="avatar" />
+		<result property="token" column="token" />
+		<result property="emailid" column="emailid" />
+		<result property="money" column="money" />
+	</resultMap>
+
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="userResult">
+		<![CDATA[
+			select * from user order by userid
+		]]>
+	</select>
+
+	<select id="selectOne" resultMap="userResult"
+		parameterType="String">
+		<![CDATA[
+			select * from user where username = #{username}
+		]]>
+	</select>
+	<select id="selectProfile" resultMap="userResult"
+		parameterType="int">
+		<![CDATA[
+		select * from user where userid = #{userid}
+		]]>
+	</select>
+	<insert id="insert" parameterType="userVO">
+	<![CDATA[
+	insert into user(username,password,phone,email,roleaccount_id,status,fbid,avatar,token,money)
+	values(#{username},#{password},#{phone},#{email},#{roleaccount_id},#{status},#{fbid},#{avatar},#{token},#{money})
+	]]>
+	</insert>
+
+	<insert id="insertUser" parameterType="userVO">
+	<![CDATA[
+		insert into user(username,password,phone,email,status,avatar)
+		values(#{username},#{password},#{phone},#{email},#{status},#{avatar})
+	]]>
+	</insert>
+
+	<insert id="insertUserFB" parameterType="userVO">
+	<![CDATA[
+		insert into user(username,fbid,status,avatar)
+		values(#{username},#{fbid},#{status},#{avatar}) 
+	]]>
+	</insert>
+	<!-- Thong profile -->
+	<update id="update" parameterType="userVO">
+	<![CDATA[
+		update user set
+			username=#{username},
+			password=#{password},
+			phone=#{phone},
+			email=#{email},
+			status=#{status},
+			avatar=#{avatar},
+			money=#{money}
+		where userid = #{userid}
+	]]>
+	</update>
+	<select id="selectUserFB" resultMap="userResult"
+		parameterType="String">
+		<![CDATA[
+			SELECT * FROM user where fbid = #{fbid}
+		]]>
+	</select>
+
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from user 
+		where userid = #{userid}
+	]]>
+	</delete>
+	<insert id="insertUserGmail" parameterType="userVO">
+	<![CDATA[
+		insert into user(username,emailid,status,email,avatar)
+		values(#{username},#{emailid},#{status},#{email},#{avatar}) 
+	]]>
+	</insert>
+	
+	<select id="selectUserGmail" resultMap="userResult"
+		parameterType="String">
+		<![CDATA[
+			select * from user where emailid = #{emailid}
+		]]>
+	</select>
+</mapper>

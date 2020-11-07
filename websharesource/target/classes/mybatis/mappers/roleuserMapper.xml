@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- author: Nguyen_Thai -->
+
+
+<mapper namespace="mappers.roleuserMapper">
+
+	<resultMap type="roleuserVO" id="roleuserMapper">
+		<result property="userid" column="userid" />
+		<result property="roleid" column="roleid" />
+	</resultMap>
+
+
+	<select id="selectAll" resultMap="roleuserMapper"
+		parameterType="int">
+		<![CDATA[
+			select * from role_user
+		]]>
+	</select>
+
+	<insert id="insertRoleUser" parameterType="roleuserVO">
+	<![CDATA[
+	insert into role_user(userid,roleid)
+		values(#{userid},#{roleid})
+	]]>
+	</insert>
+
+	 
+
+</mapper>
