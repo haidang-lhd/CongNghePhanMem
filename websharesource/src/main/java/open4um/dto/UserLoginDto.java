@@ -1,4 +1,4 @@
-package tp.kits3.open4um.dto;
+package open4um.dto;
 
 import org.springframework.stereotype.Component;
 

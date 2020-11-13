@@ -1,4 +1,4 @@
-package tp.kits3.open4um.apiloginregister;
+package open4um.apiloginregister;
 
 import java.io.IOException;
 import java.util.Collection;

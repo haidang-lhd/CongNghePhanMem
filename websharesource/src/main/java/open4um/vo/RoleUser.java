@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 public class RoleUser {
 
@@ -32,7 +32,7 @@ public class RoleUser {
         this.roleid = roleid;
     }
 
-    // RoleUser 모델 복사
+    //
     public void CopyData(RoleUser param)
     {
         this.roleUserId = param.getRoleUserId();

@@ -1,7 +1,7 @@
 /**
- * author:TOan
+ * 
  */
-package tp.kits3.open4um.dto;
+package open4um.dto;
 
 import java.io.Serializable;
 

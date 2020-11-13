@@ -1,4 +1,4 @@
-package tp.kits3.open4um.config;
+package open4um.config;
 
 import java.io.IOException;
 import java.util.ArrayList;

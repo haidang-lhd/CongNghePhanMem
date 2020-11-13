@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 import java.sql.Timestamp;
 
@@ -142,7 +142,7 @@ public class Source {
 
  
 
-    // Source 모델 복사
+    //
     public void CopyData(Source param)
     {
         this.sourceid = param.getSourceid();

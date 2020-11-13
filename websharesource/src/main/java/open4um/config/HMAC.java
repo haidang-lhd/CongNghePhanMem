@@ -1,4 +1,4 @@
-package tp.kits3.open4um.config;
+package open4um.config;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

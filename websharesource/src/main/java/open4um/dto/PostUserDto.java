@@ -1,6 +1,6 @@
-package tp.kits3.open4um.dto;
+package open4um.dto;
 
-import tp.kits3.open4um.vo.Product;
+import open4um.vo.Product;
 
 public class PostUserDto extends Product {
 	private String username;

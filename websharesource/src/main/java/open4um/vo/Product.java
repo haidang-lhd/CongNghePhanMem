@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -149,7 +149,7 @@ public class Product implements Serializable{
         this.dislikes = dislikes;
     }
 
-    // Product 모델 복사
+    // 
     public void CopyData(Product param)
     {
         this.proid = param.getProid();

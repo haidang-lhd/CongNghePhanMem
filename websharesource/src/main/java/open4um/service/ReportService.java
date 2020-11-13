@@ -1,4 +1,4 @@
-package tp.kits3.open4um.service;
+package open4um.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

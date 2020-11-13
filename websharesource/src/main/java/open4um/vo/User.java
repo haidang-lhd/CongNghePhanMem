@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -143,7 +143,7 @@ public class User {
         this.money = money;
     }
 
-    // User 모델 복사
+    // 
     public void CopyData(User param)
     {
         this.userid = param.getUserid();

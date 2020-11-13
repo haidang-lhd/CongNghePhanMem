@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 import java.sql.Timestamp;
 
@@ -117,7 +117,7 @@ public class Comment {
         this.sourceid = sourceid;
     }
 
-    // Comment 모델 복사
+    // 
     public void CopyData(Comment param)
     {
         this.cmtid = param.getCmtid();

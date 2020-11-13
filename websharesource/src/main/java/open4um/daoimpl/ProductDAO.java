@@ -1,7 +1,7 @@
-package tp.kits3.open4um.dao;
+package open4um.dao;
 
 /**
- *	@author Huu Nghia 
+ *	
  */
 import java.util.List;
 

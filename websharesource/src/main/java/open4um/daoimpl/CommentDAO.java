@@ -1,4 +1,4 @@
-package tp.kits3.open4um.dao;
+package open4um.dao;
 
 import java.util.List;
 

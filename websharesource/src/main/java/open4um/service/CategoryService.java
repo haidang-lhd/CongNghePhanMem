@@ -1,6 +1,6 @@
-package tp.kits3.open4um.service;
+package open4um.service;
 /**
- * @Author: Huu Nghia
+ * 
  */
 
 import java.util.List;

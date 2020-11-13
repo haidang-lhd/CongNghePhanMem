@@ -1,4 +1,4 @@
-package tp.kits3.open4um.config;
+package open4um.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

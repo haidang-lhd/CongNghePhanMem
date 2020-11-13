@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 public class Tag {
 
@@ -31,7 +31,7 @@ public class Tag {
         this.tagname = tagname;
     }
 
-    // Tag 모델 복사
+    // 
     public void CopyData(Tag param)
     {
         this.tagid = param.getTagid();

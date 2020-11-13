@@ -1,4 +1,4 @@
-package tp.kits3.open4um.dto;
+package open4um.dto;
 
 public class Search {
 	private int ctgid;

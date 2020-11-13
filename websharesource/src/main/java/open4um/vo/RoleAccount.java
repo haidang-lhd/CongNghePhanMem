@@ -1,4 +1,4 @@
-package tp.kits3.open4um.vo;
+package open4um.vo;
 
 public class RoleAccount {
 
@@ -22,7 +22,7 @@ public class RoleAccount {
         this.roleaccountName = roleaccountName;
     }
 
-    // Roleaccount 모델 복사
+    // 
     public void CopyData(RoleAccount param)
     {
         this.roleaccountId = param.getRoleaccountId();

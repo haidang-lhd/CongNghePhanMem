@@ -1,4 +1,4 @@
-package tp.kits3.open4um.service;
+package open4um.service;
 
 import java.util.List;
 

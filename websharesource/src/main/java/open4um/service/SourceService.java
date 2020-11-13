@@ -1,4 +1,4 @@
-package tp.kits3.open4um.service;
+package open4um.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +12,7 @@ import tp.kits3.open4um.dto.SourceDto;
 import tp.kits3.open4um.vo.Source;
 
 /*
- * author nguyenthai
+ * 
  */
 @Service
 public class SourceService implements SourceDao{

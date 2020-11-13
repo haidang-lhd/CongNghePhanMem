@@ -1,6 +1,6 @@
-package tp.kits3.open4um.controller;
+package open4um.controller;
 /**
- * @author 응이아
+ * 
  */
 import java.util.List;
 

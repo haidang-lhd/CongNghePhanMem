@@ -1,4 +1,4 @@
-package tp.kits3.open4um.service;
+package open4um.service;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -79,7 +79,7 @@ public class ProductService implements ProductDAO {
 			}else {
 				long Gio = (s / 60 / 60 / 1000);
 				if(Gio >= 1) {
-					String newGio = (s / 60 / 60 / 1000) + " Giờ";
+					String newGio = (s / 60 / 60 / 1000) + " Giá";
 					item.setTime(newGio);
 				}else {
 					String newPhut = (s / 60  / 1000) + " Phút";
@@ -110,7 +110,7 @@ public class ProductService implements ProductDAO {
 				long Gio = (s / 60 / 60 / 1000);
 				if(Gio >= 1) {
 					
-					String newGio = (s / 60 / 60 / 1000) + " Giờ";
+					String newGio = (s / 60 / 60 / 1000) + " Giá";
 					 
 					item.setTime(newGio);
 				}else {
