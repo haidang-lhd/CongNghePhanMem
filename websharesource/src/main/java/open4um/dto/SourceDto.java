@@ -1,6 +1,6 @@
-package open4um.dto;
+package tp.kits3.open4um.dto;
 
-import open4um.vo.Source;
+import tp.kits3.open4um.vo.Source;
 
 public class SourceDto extends Source {
 
