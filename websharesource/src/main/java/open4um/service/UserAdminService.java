@@ -13,7 +13,7 @@ import tp.kits3.open4um.vo.User;
 public class UserToanAdminService {
 	@Autowired
 	private UserToanAdminImpl impl;
-	//<!--Author:Toan-->
+	 
 		public List<User> selectuserName() {
 			List<User> list = impl.selectUserName();
 			return list;
@@ -30,6 +30,6 @@ public class UserToanAdminService {
 		
 		
 		
-		//--/Het Author:Toan
+		 
 		
 }

@@ -1,4 +1,4 @@
-package tp.kits3.open4um.controller;
+package open4um.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,11 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import tp.kits3.open4um.dto.Upload;
 import tp.kits3.open4um.service.UploadService;
 import tp.kits3.open4um.service.UserService;
-/**
- * 
- * @author Thong
- *
- */
+ 
 @Controller
 public class UploadController {
 	@Autowired
@@ -25,7 +21,7 @@ public class UploadController {
 	private UserService userS;
 	/**
 	 * 
-	 * @param Thong list upload
+	 * @param  list upload
 	 * @return
 	 */
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
@@ -38,7 +34,7 @@ public class UploadController {
 	}
 	/**
 	 * 
-	 * @param Thong search upload
+	 * @param   search upload
 	 * @return
 	 */
 	@RequestMapping(value = "/search-upload", method = RequestMethod.GET)

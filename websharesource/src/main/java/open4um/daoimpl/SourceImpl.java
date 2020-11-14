@@ -1,4 +1,4 @@
-package tp.kits3.open4um.daoimpl;
+package open4um.daoimpl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,9 +12,7 @@ import tp.kits3.open4um.dao.SourceDao;
 import tp.kits3.open4um.dto.SourceDto;
 import tp.kits3.open4um.vo.Source;
 
-/*
- * author nguyenthai
- */
+ 
 @Repository
 public class SourceImpl implements SourceDao {
 
@@ -31,9 +29,7 @@ public class SourceImpl implements SourceDao {
 		session.commit();
 		session.close();
 	}
-	/*
-	 * chi
-	 */
+	 
 	@Override
 	public List<SourceDto> selectBySourceWeb() {
 		SqlSession session = ConnectionFactory.getInstance().openSession();

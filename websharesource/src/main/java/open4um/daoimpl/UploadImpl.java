@@ -1,4 +1,4 @@
-package tp.kits3.open4um.daoimpl;
+package open4um.daoimpl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,11 +10,7 @@ import org.springframework.stereotype.Repository;
 import tp.kits3.open4um.config.ConnectionFactory;
 import tp.kits3.open4um.dao.UploadDao;
 import tp.kits3.open4um.dto.Upload;
-/**
- * 
- * @author Thong
- *
- */
+ 
 @Repository
 public class UploadImpl implements UploadDao {
 	//view-Thong

@@ -1,8 +1,6 @@
-package tp.kits3.open4um.controller;
+package open4um.controller;
 
-/**
- * @author Ha Thi Bich Chi
- * */
+ 
 
 import java.io.File;
 import java.io.IOException;

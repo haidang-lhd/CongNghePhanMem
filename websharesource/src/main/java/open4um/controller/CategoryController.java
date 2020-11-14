@@ -1,4 +1,4 @@
-package tp.kits3.open4um.controller;
+package open4um.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

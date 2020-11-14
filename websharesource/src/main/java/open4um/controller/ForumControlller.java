@@ -1,4 +1,4 @@
-package sopen4um.controller;
+package open4um.controller;
 
 /**
  * 

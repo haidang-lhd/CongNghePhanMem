@@ -1,11 +1,7 @@
-package tp.kits3.open4um.dto;
+package  open4um.dto;
 
 import java.sql.Timestamp;
-/**
- * 
- * @author Thong
- *
- */
+ 
 public class Upload {
 	private String sourcename;
 	private Timestamp date;

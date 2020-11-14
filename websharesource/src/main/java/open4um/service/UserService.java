@@ -49,7 +49,7 @@ public class UserService {
 	public int insertUserFB(User user) {
 		return dao.insertUserFB(user);
 	}
-	//Thong profile
+	//  profile
 	public User selectProfile(int id) {		
 		return dao.selectProfile(id) ;
 	}
@@ -61,7 +61,7 @@ public class UserService {
 	public List<UserLoginDto> selectLoginGmail(String id) {
 		return dao.selectLoginGmail(id);
 	}
-	//Chi admin-upload user
+	//  admin-upload user
 
 	public List<UserLoginDto> findAll() {
 		return dao.findAll();
