@@ -12,22 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tp.kits3.open4um.dto.PostUserDto;
-import tp.kits3.open4um.dto.SourceDto;
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.ProductService;
-import tp.kits3.open4um.service.SourceService;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.Category;
-import tp.kits3.open4um.vo.Source;
+import  open4um.dto.PostUserDto;
+import  open4um.dto.SourceDto;
+import  open4um.service.CategoryService;
+import  open4um.service.ProductService;
+import  open4um.service.SourceService;
+import  open4um.service.UserService;
+import  open4um.vo.Category;
+import  open4um.vo.Source;
 
  
-
-/**
- * 
- * 
- *
- */
 @Controller
 public class HomeController {
 

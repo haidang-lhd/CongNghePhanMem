@@ -8,10 +8,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.dao.CategoryChiDAO;
-import tp.kits3.open4um.dao.CategoryDAO;
-import tp.kits3.open4um.daoimpl.CategoryImpl;
-import tp.kits3.open4um.vo.Category;
+import  open4um.dao.CategoryChiDAO;
+import  open4um.dao.CategoryDAO;
+import  open4um.daoimpl.CategoryImpl;
+import  open4um.vo.Category;
 
 @Service
 public class CategoryService implements CategoryChiDAO{

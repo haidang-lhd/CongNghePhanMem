@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.daoimpl.ProductToanImpl;
-import tp.kits3.open4um.dto.ProductRoleDto;
-import tp.kits3.open4um.vo.Product;
+import  open4um.daoimpl.ProductToanImpl;
+import  open4um.dto.ProductRoleDto;
+import  open4um.vo.Product;
 
 @Service
 public class ProductToanAdminService {

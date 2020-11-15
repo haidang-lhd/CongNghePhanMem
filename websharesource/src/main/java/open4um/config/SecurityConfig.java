@@ -14,14 +14,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import tp.kits3.open4um.service.MyUserDetailsService;
+import  open4um.service.MyUserDetailsService;
 
-
-/**
- * 
- * 
- *
- */
+ 
 
 @Configuration
 @EnableWebSecurity

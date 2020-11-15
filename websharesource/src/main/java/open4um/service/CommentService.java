@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.dao.CommentDAO;
-import tp.kits3.open4um.daoimpl.CommentImpl;
-import tp.kits3.open4um.dto.CommentProductDto;
-import tp.kits3.open4um.vo.Comment;
+import  open4um.dao.CommentDAO;
+import  open4um.daoimpl.CommentImpl;
+import  open4um.dto.CommentProductDto;
+import  open4um.vo.Comment;
 
 @Service
 public class CommentService implements CommentDAO {

@@ -1,7 +1,6 @@
 package open4um.controller;
-/**
- * 
- */
+ 
+  
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tp.kits3.open4um.dto.Search;
-import tp.kits3.open4um.service.SearchService;
+import  open4um.dto.Search;
+import  open4um.service.SearchService;
 
 
 @Controller

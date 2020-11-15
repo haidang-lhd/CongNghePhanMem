@@ -1,6 +1,6 @@
 package open4um.dao;
 
-import tp.kits3.open4um.vo.Report;
+import  open4um.vo.Report;
 
 public interface ReportDAO {
 	

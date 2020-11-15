@@ -7,10 +7,10 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import tp.kits3.open4um.config.ConnectionFactory;
-import tp.kits3.open4um.dao.SourceDao;
-import tp.kits3.open4um.dto.SourceDto;
-import tp.kits3.open4um.vo.Source;
+import  open4um.config.ConnectionFactory;
+import  open4um.dao.SourceDao;
+import  open4um.dto.SourceDto;
+import  open4um.vo.Source;
 
  
 @Repository

@@ -5,11 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import tp.kits3.open4um.config.ConnectionFactory;
-import tp.kits3.open4um.dao.UserDao;
-import tp.kits3.open4um.dto.UserLoginDto;
-import tp.kits3.open4um.vo.RoleUser;
-import tp.kits3.open4um.vo.User;
+import  open4um.config.ConnectionFactory;
+import  open4um.dao.UserDao;
+import  open4um.dto.UserLoginDto;
+import  open4um.vo.RoleUser;
+import  open4um.vo.User;
 
 /*
  * 

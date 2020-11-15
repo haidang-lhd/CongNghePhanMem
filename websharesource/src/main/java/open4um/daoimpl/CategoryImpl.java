@@ -5,9 +5,9 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import tp.kits3.open4um.config.ConnectionFactory;
-import tp.kits3.open4um.dao.CategoryChiDAO;
-import tp.kits3.open4um.vo.Category;
+import  open4um.config.ConnectionFactory;
+import  open4um.dao.CategoryChiDAO;
+import  open4um.vo.Category;
 
 @Repository
 public class CategoryImpl implements CategoryChiDAO {

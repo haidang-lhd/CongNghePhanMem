@@ -1,7 +1,5 @@
 package open4um.controller;
-/**
- *
- */
+ 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.ProductService;
-import tp.kits3.open4um.vo.Category;
-import tp.kits3.open4um.vo.Product;
+import  open4um.service.CategoryService;
+import  open4um.service.ProductService;
+import  open4um.vo.Category;
+import  open4um.vo.Product;
 
 @Controller
 public class SearchForumController {

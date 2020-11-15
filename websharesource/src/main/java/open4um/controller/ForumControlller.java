@@ -1,8 +1,5 @@
 package open4um.controller;
-
-/**
- * 
- */
+ 
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,28 +16,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import tp.kits3.open4um.dto.AddReportDto;
-import tp.kits3.open4um.dto.CommentProductDto;
-import tp.kits3.open4um.dto.InfoUserDto;
-import tp.kits3.open4um.dto.PostDto;
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.CommentService;
-import tp.kits3.open4um.service.ProductService;
-import tp.kits3.open4um.service.ReportService;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.Category;
-import tp.kits3.open4um.vo.Comment;
-import tp.kits3.open4um.vo.Product;
-import tp.kits3.open4um.vo.ReplyVO;
-import tp.kits3.open4um.vo.Report;
-import tp.kits3.open4um.vo.User;
+import  open4um.dto.AddReportDto;
+import  open4um.dto.CommentProductDto;
+import  open4um.dto.InfoUserDto;
+import  open4um.dto.PostDto;
+import  open4um.service.CategoryService;
+import  open4um.service.CommentService;
+import  open4um.service.ProductService;
+import  open4um.service.ReportService;
+import  open4um.service.UserService;
+import  open4um.vo.Category;
+import  open4um.vo.Comment;
+import  open4um.vo.Product;
+import  open4um.vo.ReplyVO;
+import  open4um.vo.Report;
+import  open4um.vo.User;
 
-
-/**
- * 
- *
- *
- */
+ 
 
 @Controller
 @SessionAttributes("listc")

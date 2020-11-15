@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.daoimpl.UserToanAdminImpl;
-import tp.kits3.open4um.dto.UserRoleDto;
-import tp.kits3.open4um.vo.User;
+import  open4um.daoimpl.UserToanAdminImpl;
+import  open4um.dto.UserRoleDto;
+import  open4um.vo.User;
 
 @Service
 public class UserToanAdminService {

@@ -26,16 +26,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import tp.kits3.open4um.dto.SourceDto;
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.RatingService;
-import tp.kits3.open4um.service.SourceService;
-import tp.kits3.open4um.service.TagService;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.Rating;
-import tp.kits3.open4um.vo.Source;
-import tp.kits3.open4um.vo.Tag;
-import tp.kits3.open4um.vo.TagProduct;
+import  open4um.dto.SourceDto;
+import  open4um.service.CategoryService;
+import  open4um.service.RatingService;
+import  open4um.service.SourceService;
+import  open4um.service.TagService;
+import  open4um.service.UserService;
+import  open4um.vo.Rating;
+import  open4um.vo.Source;
+import  open4um.vo.Tag;
+import  open4um.vo.TagProduct;
 
 
 

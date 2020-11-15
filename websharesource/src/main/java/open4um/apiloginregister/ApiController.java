@@ -21,18 +21,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import tp.kits3.open4um.config.GoogleUtils;
-import tp.kits3.open4um.dto.GooglePojo;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.RoleUser;
-import tp.kits3.open4um.vo.User;
+import  open4um.config.GoogleUtils;
+import  open4um.dto.GooglePojo;
+import  open4um.service.UserService;
+import  open4um.vo.RoleUser;
+import  open4um.vo.User;
 
-/**
- * 
- *
- *
- */
-
+ 
 @Controller
 @RequestMapping("/api")
 @SessionAttributes("user")
@@ -42,7 +37,7 @@ public class ApiController {
 	private UserService userService;
 
 	@Autowired
-	private tp.kits3.open4um.config.RestFB restFB;
+	private  open4um.config.RestFB restFB;
 
 	@Autowired
 	private GoogleUtils googleUtils;
@@ -121,7 +116,7 @@ public class ApiController {
 		UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail, null,
 				userDetail.getAuthorities());
 
-		tp.kits3.open4um.vo.User userr = userService.selectUserFB(userDetail.getPassword());
+		 open4um.vo.User userr = userService.selectUserFB(userDetail.getPassword());
 		if(userr.getMoney() == null) {
 			userr.setMoney(0.0);
 		}

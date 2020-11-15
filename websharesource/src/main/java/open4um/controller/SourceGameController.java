@@ -1,7 +1,5 @@
-/**
- * @author Ha Thi Bich Chi
- * */
-package tp.kits3.open4um.controller;
+  
+package  open4um.controller;
 
 import java.util.List;
 
@@ -14,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import tp.kits3.open4um.dto.SourceDto;
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.SourceService;
+import  open4um.dto.SourceDto;
+import  open4um.service.CategoryService;
+import  open4um.service.SourceService;
 
 @Controller
 public class SourceGameController {

@@ -20,9 +20,9 @@ import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Version;
 
-import tp.kits3.open4um.dto.UserLoginDto;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.RoleUser;
+import  open4um.dto.UserLoginDto;
+import  open4um.service.UserService;
+import  open4um.vo.RoleUser;
 
 /*
  * 
@@ -74,7 +74,7 @@ public class RestFB {
 			}
 			
 		}else {		
-			tp.kits3.open4um.vo.User userFB = new tp.kits3.open4um.vo.User();
+			 open4um.vo.User userFB = new  open4um.vo.User();
 			String[] avatar = {"cn_1","hn_2.jpg","tn_3.jpg","mn_4.jpg","rn_5.jpg","pn_6.jpg"};
 			Random rd = new Random();
 			int index_avt = rd.nextInt(6);

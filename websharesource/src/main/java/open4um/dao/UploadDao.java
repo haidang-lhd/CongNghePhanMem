@@ -2,7 +2,7 @@ package open4um.dao;
 
 import java.util.List;
 
-import tp.kits3.open4um.dto.Upload;
+import open4um.dto.Upload;
  
 public interface UploadDao {
 	public List<Upload> selectUpload(int id);

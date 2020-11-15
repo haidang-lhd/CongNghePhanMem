@@ -2,8 +2,8 @@ package open4um.dao;
 
 import java.util.List;
 
-import tp.kits3.open4um.dto.TagRoleDto;
-import tp.kits3.open4um.vo.Source;
+import  open4um.dto.TagRoleDto;
+import  open4um.vo.Source;
 
 public interface TagroleDao {
 	public List<TagRoleDto> tagtheoproid(int proid);

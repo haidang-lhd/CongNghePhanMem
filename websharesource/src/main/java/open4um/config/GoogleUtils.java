@@ -18,13 +18,11 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tp.kits3.open4um.dto.GooglePojo;
-import tp.kits3.open4um.dto.UserLoginDto;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.RoleUser;
-/*
- * 
- */
+import  open4um.dto.GooglePojo;
+import  open4um.dto.UserLoginDto;
+import  open4um.service.UserService;
+import  open4um.vo.RoleUser;
+ 
 @Component
 public class GoogleUtils {
 	public static String GOOGLE_CLIENT_ID = "1055902144348-1m5kde8jfcivc66mku9rhtktgc5j1835.apps.googleusercontent.com";
@@ -80,7 +78,7 @@ public class GoogleUtils {
 			String usG = googlePojo.getEmail();
 			String[] arrUs = usG.split("@");
 			String name =arrUs[0];
-			tp.kits3.open4um.vo.User usGmail = new tp.kits3.open4um.vo.User();
+			 open4um.vo.User usGmail = new  open4um.vo.User();
 			usGmail.setUsername(name);
 			usGmail.setStatus("active");
 			usGmail.setEmailid(googlePojo.getId());

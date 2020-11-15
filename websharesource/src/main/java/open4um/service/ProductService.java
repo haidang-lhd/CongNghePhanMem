@@ -14,11 +14,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.dao.ProductDAO;
-import tp.kits3.open4um.daoimpl.ProductImpl;
-import tp.kits3.open4um.dto.PostDto;
-import tp.kits3.open4um.dto.PostUserDto;
-import tp.kits3.open4um.vo.Product;
+import  open4um.dao.ProductDAO;
+import  open4um.daoimpl.ProductImpl;
+import  open4um.dto.PostDto;
+import  open4um.dto.PostUserDto;
+import  open4um.vo.Product;
 
 @Service
 public class ProductService implements ProductDAO {

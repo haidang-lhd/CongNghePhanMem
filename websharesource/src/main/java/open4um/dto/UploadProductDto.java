@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import tp.kits3.open4um.vo.Product;
+import open4um.vo.Product;
 
 public class UploadProductDto extends  Product{
 	private MultipartFile multipartFile;

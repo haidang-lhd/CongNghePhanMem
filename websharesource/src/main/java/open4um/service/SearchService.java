@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.dao.SearchDao;
-import tp.kits3.open4um.dto.Search;
+import  open4um.dao.SearchDao;
+import  open4um.dto.Search;
 
 @Service
 public class SearchService {

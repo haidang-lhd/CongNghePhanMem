@@ -7,9 +7,9 @@ import org.apache.commons.fileupload.UploadContext;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import tp.kits3.open4um.config.ConnectionFactory;
-import tp.kits3.open4um.dao.UploadDao;
-import tp.kits3.open4um.dto.Upload;
+import  open4um.config.ConnectionFactory;
+import  open4um.dao.UploadDao;
+import  open4um.dto.Upload;
  
 @Repository
 public class UploadImpl implements UploadDao {

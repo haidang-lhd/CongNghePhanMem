@@ -2,7 +2,7 @@ package open4um.dto;
 
 import org.springframework.stereotype.Component;
 
-import tp.kits3.open4um.vo.User;
+import  open4um.vo.User;
 
 @Component
 public class UserLoginDto extends User {

@@ -3,8 +3,8 @@ package  open4um.dao;
 import java.util.HashMap;
 import java.util.List;
 
-import tp.kits3.open4um.dto.SourceDto;
-import tp.kits3.open4um.vo.Source;
+import  open4um.dto.SourceDto;
+import  open4um.vo.Source;
 
  
 public interface SourceDao {

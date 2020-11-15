@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tp.kits3.open4um.service.CategoryService;
-import tp.kits3.open4um.service.SourceService;
-import tp.kits3.open4um.vo.Category;
-import tp.kits3.open4um.vo.Source;
+import  open4um.service.CategoryService;
+import  open4um.service.SourceService;
+import  open4um.vo.Category;
+import  open4um.vo.Source;
 
 @Controller
 @RequestMapping("/api")

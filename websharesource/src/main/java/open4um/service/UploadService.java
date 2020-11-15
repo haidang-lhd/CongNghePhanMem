@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tp.kits3.open4um.daoimpl.UploadImpl;
-import tp.kits3.open4um.dto.Upload;
+import  open4um.daoimpl.UploadImpl;
+import  open4um.dto.Upload;
  
 @Service
 public class UploadService {

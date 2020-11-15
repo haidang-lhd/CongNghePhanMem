@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import tp.kits3.open4um.dto.Upload;
-import tp.kits3.open4um.service.UploadService;
-import tp.kits3.open4um.service.UserService;
+import  open4um.dto.Upload;
+import  open4um.service.UploadService;
+import open4um.service.UserService;
  
 @Controller
 public class UploadController {
