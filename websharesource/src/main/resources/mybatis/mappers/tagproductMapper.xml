@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.tagproductMapper">
+
+	<resultMap type="tagproductVO" id="tagproductResult">
+		<result property="tag_productid" column="tag_productid"/>
+		<result property="tagid" column="tagid"/>
+		<result property="productid" column="productid"/>
+		<result property="sourceid" column="sourceid"/>
+		<result property="tagname" column="tagname"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="tagproductResult">
+		<![CDATA[
+			select * from tag_product order by tag_productid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="tagproductResult" parameterType="int">
+		<![CDATA[
+			select * from tag_product where tag_productid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="tagproductVO">
+	<![CDATA[
+	insert into tag_product(tagid,sourceid)
+	values(#{tagid},#{sourceid})
+	]]>
+	</insert>
+	<update id="update" parameterType="tagproductVO">
+	<![CDATA[
+		update tag_product set
+			tagid=#{tagid},
+			productid=#{productid},
+		where tag_productid = #{tag_productid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from tag_product 
+		where tag_productid = #{tag_productid}
+	]]>
+	</delete>
+	
+	<select id="selectTagBySource" resultMap="tagproductResult" parameterType="int">
+		<![CDATA[
+			
+			SELECT * FROM tag_product t, tag a WHERE t.tagid = a.tagid AND t.sourceid = #{sourceid} 
+		]]>
+	</select>
+	
+</mapper>
