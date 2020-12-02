@@ -1,6 +1,6 @@
 package open4um.apiloginregister;
 
- * */
+ 
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tp.kits3.open4um.dto.UserLoginDto;
-import tp.kits3.open4um.service.UserService;
-import tp.kits3.open4um.vo.User;
+import  open4um.dto.UserLoginDto;
+import  open4um.service.UserService;
+import  open4um.vo.User;
 
 @Controller
 @RequestMapping("/api")

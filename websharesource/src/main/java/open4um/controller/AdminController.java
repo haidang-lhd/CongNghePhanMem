@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import tp.kits3.open4um.dto.UserLoginDto;
-import tp.kits3.open4um.service.UserService;
+import  open4um.dto.UserLoginDto;
+import  open4um.service.UserService;
 @Controller
 public class AdminController {
 	@Autowired

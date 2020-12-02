@@ -11,9 +11,7 @@ import  open4um.dto.UserLoginDto;
 import  open4um.vo.RoleUser;
 import  open4um.vo.User;
 
-/*
- * 
- */
+ 
 @Repository
 public class UserImpl implements UserDao {
 

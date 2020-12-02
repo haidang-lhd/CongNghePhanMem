@@ -1,4 +1,4 @@
-package  open4um.dto;
+package open4um.dto;
 
 public class DownloadDto {
 	

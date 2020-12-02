@@ -11,7 +11,7 @@ import  open4um.dto.ProductRoleDto;
 import  open4um.vo.Product;
 @Repository
 public class ProductToanImpl implements ProductToanAdminDao{
-	//	author:toan
+	 
 	public List<ProductRoleDto> selectdanhsachBaiViet() {
 		SqlSession session = ConnectionFactory.getInstance().openSession();
 		List<ProductRoleDto> list = session.selectList("mappers.productroleMapper.selectdanhsachBaiViet");
@@ -19,7 +19,7 @@ public class ProductToanImpl implements ProductToanAdminDao{
 		session.close();
 		return list;
 		// TODO Auto-generated method stub
-//het author:Toan
+ 
 }
 	public List<ProductRoleDto> selectduyet() {
 		SqlSession session = ConnectionFactory.getInstance().openSession();

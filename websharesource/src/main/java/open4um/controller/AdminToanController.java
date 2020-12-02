@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import tp.kits3.open4um.dto.ProductRoleDto;
-import tp.kits3.open4um.dto.UserRoleDto;
-import tp.kits3.open4um.service.CategoryToanAdminService;
-import tp.kits3.open4um.service.MessageToanAdminService;
-import tp.kits3.open4um.service.OrderHistoryService;
-import tp.kits3.open4um.service.ProductService;
-import tp.kits3.open4um.service.ProductToanAdminService;
-import tp.kits3.open4um.service.SourceToanAdminService;
-import tp.kits3.open4um.service.UserToanAdminService;
-import tp.kits3.open4um.vo.Message;
-import tp.kits3.open4um.vo.OrderHistory;
-import tp.kits3.open4um.vo.Product;
-import tp.kits3.open4um.vo.Source;
-import tp.kits3.open4um.vo.User;
+import  open4um.dto.ProductRoleDto;
+import  open4um.dto.UserRoleDto;
+import  open4um.service.CategoryToanAdminService;
+import  open4um.service.MessageToanAdminService;
+import  open4um.service.OrderHistoryService;
+import  open4um.service.ProductService;
+import  open4um.service.ProductToanAdminService;
+import  open4um.service.SourceToanAdminService;
+import  open4um.service.UserToanAdminService;
+import  open4um.vo.Message;
+import  open4um.vo.OrderHistory;
+import  open4um.vo.Product;
+import  open4um.vo.Source;
+import  open4um.vo.User;
 
 @Controller
 public class AdminToanController {
@@ -49,7 +49,7 @@ public class AdminToanController {
 	@Autowired
 	private ProductService productService;
 
-	// author:Toan
+	 
 	@RequestMapping(value = { "/admin/" }, method = RequestMethod.GET)
 	public String Index(Model model, Model model1, Model model2, Model model3, Model model4, Model model5) {
 		List<User> list = usersv.selectuserName();

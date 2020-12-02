@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.tagRoleMapper">
+
+	 <resultMap type="tagroleDTO" id="tagroleResult">		
+		<result property="tagid" column="tagid"/>
+		<result property="tagname" column="tagname"/>		
+		<result property="proid" column="proid"/>
+		<result property="title" column="title"/>
+		<result property="ctgid" column="ctgid"/>
+		<result property="like" column="like"/>
+		<result property="views" column="views"/>
+		<result property="datepost" column="datepost"/>
+		<result property="content" column="content"/>
+		<result property="image" column="image"/>
+		<result property="userid" column="userid"/>
+		<result property="stateid" column="stateid"/>
+		<result property="reason" column="reason"/>
+		<result property="dislikes" column="dislikes"/>
+		<result property="tag_productid" column="tag_productid"/>
+		<result property="productid" column="productid"/>
+	</resultMap> 
+	
+	<select id="tagtheoproid" resultMap="tagroleResult" parameterType="int">
+		<![CDATA[
+		SELECT tagname
+		FROM tag t,product p,tag_product t_g
+		WHERE   t_g.productid  = p.proid AND t_g.tagid = t.tagid  AND p.proid=#{id}
+		
+		]]>
+	</select>
+	<insert id="likebaiviet" parameterType="tagroleDTO">
+	<![CDATA[
+	insert into cart(proid,userid)
+	values(#{proid},#{userid})
+	]]>
+	</insert>
+	<select id="selectOneByRole" resultMap="tagroleResult" parameterType="int">
+		<![CDATA[
+		SELECT user.userid, username,phone,email, status, roleaccount_name FROM user
+		INNER JOIN role_user
+		ON user.userid = role_user.userid
+		INNER JOIN role
+		ON role_user.roleid = role.roleid
+		where user.userid=#{userid}
+		
+		]]>
+	</select>
+	<update id="update" parameterType="tagroleDTO">
+	<![CDATA[
+	UPDATE 
+  	user 
+	SET 
+  		username=#{username},
+		phone=#{phone},
+		email=#{email},
+		status=#{status}
+		WHERE 
+   		userid=#{userid} 
+	]]>
+	</update>
+ 
+</mapper>
