@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.cartMapper">
+
+	<resultMap type="cartVO" id="cartResult">
+		<result property="cartid" column="cartid"/>
+		<result property="proid" column="proid"/>
+		<result property="userid" column="userid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="cartResult">
+		<![CDATA[
+			select * from cart order by cartid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="cartResult" parameterType="int">
+		<![CDATA[
+			select * from cart where cartid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="cartVO">
+	<![CDATA[
+	insert into cart(proid,userid)
+	values(#{proid},#{userid})
+	]]>
+	</insert>
+	<update id="update" parameterType="cartVO">
+	<![CDATA[
+		update cart set
+			proid=#{proid},
+			userid=#{userid},
+		where cartid = #{cartid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from cart 
+		where cartid = #{cartid}
+	]]>
+	</delete>
+	
+</mapper>

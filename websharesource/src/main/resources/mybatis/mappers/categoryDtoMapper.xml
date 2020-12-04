@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.categoryDtoMapper">
+
+	<resultMap type="categoryDto" id="categoryDtoResult">
+		<result property="ctgid" column="ctgid"/>
+		<result property="ctgname" column="ctgname"/>
+		<result property="ctgdate" column="ctgdate"/>
+		<result property="parent" column="parent"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	
+	<select id="selectAllCategory" resultMap="categoryDtoResult">
+		<![CDATA[
+			SELECT c1.ctgid, c1.ctgname, c1.ctgdate, c2.ctgname AS parent FROM category AS c1, category AS c2 WHERE c1.parentid = c2.ctgid
+		]]>
+	</select>
+</mapper>

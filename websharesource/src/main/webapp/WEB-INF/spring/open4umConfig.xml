@@ -21,7 +21,7 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<context:component-scan base-package="tp.kits3.open4um"></context:component-scan>
+	<context:component-scan base-package="open4um"></context:component-scan>
 	
 	 <bean id="multipartResolver"
     class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

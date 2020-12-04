@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author Nghia  -->
+<mapper namespace="mappers.searchMapper">
+	<resultMap type="searchDTO" id="searchResult">
+		<result property="ctgid" column="ctgid"/>
+		<result property="ctgname" column="ctgname"/>
+		<result property="title" column="title"/>
+		<result property="views" column="views"/>
+		<result property="url" column="url"/>
+	</resultMap>
+	
+	<select id="selectSearch" resultMap="searchResult" parameterType="String" >
+		<![CDATA[
+			SELECT p.title, c.ctgname, p.views , c.url, c.ctgid
+			FROM product p, category c
+			WHERE p.ctgid = c.ctgid AND p.title LIKE '%' #{key} '%'
+		]]>
+	</select>
+	
+</mapper>

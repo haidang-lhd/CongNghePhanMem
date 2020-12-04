@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.productroleMapper">
+
+	<resultMap type="productroleDTO" id="productroleResult">
+		<result property="proid" column="proid" />
+		<result property="title" column="title" />
+		<result property="ctgid" column="ctgid" />
+		<result property="like" column="like" />
+		<result property="views" column="views" />
+		<result property="datepost" column="datepost" />
+		<result property="content" column="content" />
+		<result property="image" column="image" />
+		<result property="userid" column="userid" />
+		<result property="stateid" column="stateid" />
+		<result property="statename" column="statename" />
+		<result property="reason" column="reason" />
+		<result property="dislikes" column="dislikes" />
+		<result property="userid" column="userid" />
+		<result property="username" column="username" />
+		<result property="phone" column="phone" />
+		<result property="avatar" column="avatar" />
+		<result property="email" column="email" />
+		<result property="roleaccount_name" column="roleaccount_name" />
+		<result property="status" column="status" />
+		<result property="money" column="money" />
+		<result property="rateid" column="rateid" />
+		<result property="ratevalue" column="ratevalue" />
+		<result property="ratename" column="ratename" />
+		<result property="sourceid" column="sourceid" />
+		<result property="ctgname" column="ctgname" />
+		<result property="ctgdate" column="ctgdate" />
+		<result property="parentid" column="parentid" />
+		<result property="url" column="url" />
+		<result property="status" column="status" />
+
+
+	</resultMap>
+	<!--Author:Toan -->
+	<select id="selectdanhsachBaiViet" resultMap="productroleResult">
+		<![CDATA[
+			SELECT p.proid,p.title,p.image,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid
+			
+			
+			
+		]]>
+	</select>
+	<select id="selecttungbaiviet" resultMap="productroleResult" parameterType="int">
+		<![CDATA[
+			SELECT *
+			FROM product, category, user 
+			WHERE product.ctgid = category.ctgid AND product.userid = user.userid AND product.proid= #{id}
+			
+			
+			
+		]]>
+	</select>
+		<select id="selecttheotieude" resultMap="productroleResult" parameterType="String">
+		<![CDATA[
+			SELECT DISTINCT *
+			FROM product p
+			INNER JOIN category c ON p.ctgid = c.ctgid
+			WHERE  c.ctgname =#{ctgname}
+			
+			
+			
+		]]>
+	</select>
+	<select id="selectaccountdanhsachbaiviet" resultMap="productroleResult">
+		<![CDATA[
+		SELECT * FROM (
+			SELECT p.title,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid
+		) t	
+			
+		]]>
+	</select>
+	<select id="selectduyet" resultMap="productroleResult">
+		<![CDATA[
+			SELECT proid, p.title,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid 
+			AND st.statename  LIKE 'Đã duyệt' 
+			
+			
+		]]>
+	</select>
+	<select id="selectchuaduyet" resultMap="productroleResult">
+		<![CDATA[
+			SELECT proid ,p.title,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid 
+			AND st.statename  LIKE 'Chưa duyệt' 
+			
+			
+		]]>
+	</select>
+	<select id="selectaccountduyet" resultMap="productroleResult">
+		<![CDATA[
+			SELECT * FROM (
+			SELECT proid, p.title,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid 
+			AND st.statename  LIKE 'Đã duyệt' 
+			) t
+			
+		]]>
+	</select>
+	<select id="selectaccountchuaduyet"
+		resultMap="productroleResult">
+		<![CDATA[
+			
+						SELECT * FROM (
+    		SELECT proid, p.title,r.roleaccount_name,u.username,c.ctgname,p.datepost,st.statename
+			FROM  category c, stateproduct st, product p,role r, role_user ru, user u
+			WHERE	p.ctgid = c.ctgid AND p.userid = u.userid AND p.stateid = st.stateid 
+			AND u.userid  = ru.userid AND ru.roleid = r.roleid 
+			AND st.statename  LIKE 'Chưa duyệt' 
+) t
+			
+		]]>
+	</select>
+
+	<!--/Het author:Toan -->
+
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="productroleResult">
+		<![CDATA[
+			select * from product order by proid
+		]]>
+	</select>
+
+	<select id="selectDetailsPost" resultMap="productroleResult"
+		parameterType="int">
+		<![CDATA[
+			SELECT p.proid, p.title,p.datepost,p.content,p.image,u.username,c.ctgname 
+			FROM product p JOIN user u ON p.userid = u.userid JOIN category c ON p.ctgid = c.ctgid 
+			WHERE p.proid = #{idPost}
+		]]>
+	</select>
+	<insert id="insert" parameterType="productroleDTO">
+	<![CDATA[
+	insert into product(title,ctgname,datepost,content,image,statename)
+	values(#{title},#{ctgname},#{datepost},#{content},#{image},#{statename})
+	]]>
+	</insert>
+	<update id="update" parameterType="productroleDTO">
+	<![CDATA[
+		update product set
+			title=#{title},
+			ctgid=#{ctgid},
+			like=#{like},
+			views=#{views},
+			datepost=#{datepost},
+			content=#{content},
+			image=#{image},
+			userid=#{userid},
+			stateid=#{stateid},
+			reason=#{reason},
+			dislikes=#{dislikes},
+		where proid = #{proid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		DELETE FROM product WHERE proid= {#{proid}};
+	]]>
+	</delete>
+	<update id="updatePostDetails" parameterType="productroleDTO">
+	<![CDATA[
+		update product set
+			title=#{title},
+			content=#{content},
+			image=#{image}
+		where proid = #{proid}
+	]]>
+	</update>
+</mapper>

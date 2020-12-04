@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author Thong  -->
+<mapper namespace="mappers.uploadMapper">
+	<resultMap type="uploadVO" id="uploadResult">
+		<result property="sourcename" column="sourcename"/>
+		<result property="date" column="date"/>
+		<result property="price" column="price"/>
+		<result property="statename" column="statename"/>
+		<result property="ctgname" column="ctgname"/>
+		<result property="userid" column="userid"/>
+		<result property="sourceid" column="sourceid"/>
+		<result property="ctgid" column="ctgid"/>
+		<result property="stateid" column="stateid"/>
+	</resultMap>
+	<select id="selectUpload" resultMap="uploadResult" parameterType="int" >
+		<![CDATA[
+			SELECT s.sourcename,s.date, s.price, st.statename, ct.ctgname, s.sourceid
+			from source s
+			inner join stateproduct st
+				ON s.stateid = st.stateid
+			INNER JOIN category ct
+				ON s.ctgid = ct.ctgid 
+			where userid = #{userid} order by sourceid
+		]]>
+	</select>
+	<select id="selectSearch" resultMap="uploadResult" parameterType="HashMap">
+	<![CDATA[
+		SELECT s.sourcename,s.date, s.price, st.statename, ct.ctgname
+			from source s
+			inner join stateproduct st
+				ON s.stateid = st.stateid
+			INNER JOIN category ct
+				ON s.ctgid = ct.ctgid 
+			where userid = #{userid} 
+			AND s.sourcename like CONCAT("%",#{sourcename},"%")
+			order by sourceid;
+	]]>
+	</select>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+	delete from source  where sourceid = #{sourceid}
+	]]>
+	</delete>
+</mapper>

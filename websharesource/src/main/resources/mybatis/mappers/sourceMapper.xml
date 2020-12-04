@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.sourceMapper">
+
+	<resultMap type="sourceVO" id="sourceResult">
+		<result property="sourceid" column="sourceid"/>
+		<result property="date" column="date"/>
+		<result property="sourcename" column="sourcename"/>
+		<result property="size" column="size"/>
+		<result property="contentdetails" column="contentdetails"/>
+		<result property="title" column="title"/>
+		<result property="userid" column="userid"/>
+		<result property="ctgid" column="ctgid"/>
+		<result property="price" column="price"/>
+		<result property="avatar" column="avatar"/>
+		<result property="stateid" column="stateid"/>
+		<result property="views" column="views"/>
+		<result property="downloads" column="downloads"/>
+		<result property="totalproduct" column="totalproduct"/>
+	</resultMap>
+	
+	<!-- chi -->
+	<resultMap type="sourceDTO" id="sourcedtoResult">
+		<result property="sourceid" column="sourceid" />
+		<result property="date" column="date" />
+		<result property="sourcename" column="sourcename" />
+		<result property="size" column="size" />
+		<result property="contentdetails" column="contentdetails" />
+		<result property="title" column="title" />
+		<result property="userid" column="userid" />
+		<result property="ctgid" column="ctgid" />
+		<result property="price" column="price" />
+		<result property="avatar" column="avatar" />
+		<result property="stateid" column="stateid" />
+		<result property="ctgname" column="ctgname" />
+		<result property="views" column="views"/>
+		<result property="downloads" column="downloads"/>
+	</resultMap>
+
+	<select id="selectBySourceWeb" resultMap="sourcedtoResult">
+		<![CDATA[
+			SELECT s.sourceid, s.sourcename, c.ctgname, s.avatar, c.parentid, c.ctgid
+			FROM category c, source s
+			WHERE c.ctgid = s.ctgid AND 
+			c.parentid = 26
+		]]>
+	</select>
+	
+	<select id="selectBySourceGame" resultMap="sourcedtoResult">
+		<![CDATA[
+			SELECT s.sourceid, s.sourcename, c.ctgname, s.avatar, c.parentid, c.ctgid
+			FROM category c, source s
+			WHERE c.ctgid = s.ctgid AND 
+			c.parentid = 27
+		]]>
+	</select>
+	
+	<select id="selectLimit" resultMap="sourcedtoResult" parameterType="HashMap">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid AND category.ctgid = #{ctgid} ORDER BY date desc LIMIT #{pageNo}, 6 
+		]]>
+	</select>
+	
+		<!-- chi -->
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="sourcedtoResult">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid order by dowloads DESC LIMIT 3
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM source, category WHERE sourceid = #{sourceid} AND source.ctgid = category.ctgid
+		]]>
+	</select>
+	
+	<select id="selectSourceTheSame" resultMap="sourcedtoResult" parameterType="String">
+		<![CDATA[
+			SELECT s.sourceid, s.sourcename, s.views, s.dowloads, c.ctgname, s.avatar, c.parentid, c.ctgid
+			FROM category c, source s
+			WHERE c.ctgid = s.ctgid AND 
+			c.ctgname =  #{ctgname}
+		]]>
+	</select>
+	
+	<select id="selectNameCategory" resultType="String" parameterType="int">
+		<![CDATA[
+			SELECT category.ctgname FROM source, category WHERE source.ctgid = category.ctgid AND source.sourceid = #{id}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="sourceVO">
+	<![CDATA[
+	insert into source(date,sourcename,size,contentdetails,title,userid,ctgid,price,avatar)
+	values(#{date},#{sourcename},#{size},#{contentdetails},#{title},#{userid},#{ctgid},#{price},#{avatar})
+	]]>
+	
+	</insert>
+	<update id="update" parameterType="sourceVO">
+	<![CDATA[
+		update source set
+			date=#{date},
+			sourcename=#{sourcename},
+			size=#{size},
+			contentdetails=#{contentdetails},
+			title=#{title},
+			userid=#{userid},
+			ctgid=#{ctgid},
+			price=#{price},
+			avatar=#{avatar},
+			stateid=#{stateid}, 	
+		where sourceid = #{sourceid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from source 
+		where sourceid = #{sourceid}
+	]]>
+	</delete>
+
+	<!-- nguyenthai -->
+
+
+	<select id="selectSourceNew" resultMap="sourcedtoResult">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid ORDER BY DATE DESC LIMIT 6
+		]]>
+	</select>
+	<select id="selectTotalProduct" resultMap="sourceResult" >
+		<![CDATA[
+			SELECT COUNT(*) AS totalproduct FROM source
+		]]>
+	</select>
+
+	
+	<select id="selectSourceNewMore" resultMap="sourceResult" parameterType="map">
+		<![CDATA[
+			SELECT * FROM source s ORDER BY DATE DESC LIMIT ${limit} OFFSET ${offset}
+		]]>
+	</select>
+	<select id="selectSearchSource" resultMap="sourceResult" parameterType="String">
+		<![CDATA[
+			select * FROM source c WHERE c.sourcename LIKE  '%' #{key} '%'
+		]]>
+	</select>
+	<select id="selectByCateId" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid AND category.ctgid = #{ctgid} ORDER BY date desc
+		]]>
+	</select>
+	<select id="selectA" resultMap="sourceResult" parameterType="String">
+		<![CDATA[
+			SELECT *
+			FROM  source
+			WHERE sourcename = #{sourcename}
+		]]>
+	</select>
+	
+	<select id="selectLimitSource" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid AND parentid = 27 ORDER BY date DESC LIMIT #{pageNo},6
+		]]>
+	</select>
+	
+	<select id="selectLimitSourceWeb" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM source, category WHERE source.ctgid = category.ctgid AND parentid = 26 ORDER BY date DESC LIMIT #{pageNo},6
+		]]>
+	</select>
+	<select id="selectSourceByTag" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM category, tag_product, source  WHERE source.sourceid = tag_product.sourceid
+			AND source.ctgid = category.ctgid AND tagid = #{tagid}
+		]]>
+	</select>
+	<select id="selectLimitTag" resultMap="sourcedtoResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM source, tag_product, category WHERE source.sourceid = tag_product.sourceid
+			AND source.ctgid = category.ctgid
+ 			AND tagid = #{tagid} ORDER BY date DESC LIMIT #{pageNo},6
+		]]>
+	</select>
+	
+	
+	
+	
+</mapper>

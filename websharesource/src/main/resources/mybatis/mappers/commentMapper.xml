@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.commentMapper">
+
+	<resultMap type="commentVO" id="commentResult">
+		<result property="cmtid" column="cmtid"/>
+		<result property="cmtname" column="cmtname"/>
+		<result property="datecmt" column="datecmt"/>
+		<result property="userid" column="userid"/>
+		<result property="like" column="like"/>
+		<result property="dislikes" column="dislikes"/>
+		<result property="parent" column="parent"/>
+		<result property="productid" column="productid"/>
+		<result property="sourceid" column="sourceid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="commentResult">
+		<![CDATA[
+			select * from comment order by cmtid
+		]]>
+	</select>
+	
+	<select id="selectComment" resultMap="commentResult" parameterType="int">
+		<![CDATA[
+			select * from comment where productid = #{productid}
+		]]>
+	</select>
+	
+	<select id="selectReportComment" resultMap="commentResult" parameterType="int">
+		<![CDATA[
+			select * from comment where cmtid = #{cmtid}
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="commentResult" parameterType="int">
+		<![CDATA[
+			select * from comment where cmtid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="commentVO">
+	<![CDATA[
+	insert into comment(cmtname,datecmt,userid,`like`,dislikes,parent,productid,sourceid)
+	values(#{cmtname},#{datecmt},#{userid},#{like},#{dislikes},#{parent},#{productid},#{sourceid})
+	]]>
+	</insert>
+	<update id="update" parameterType="commentVO">
+	<![CDATA[
+		update comment set
+			cmtname=#{ctgname},
+			datecmt=#{datecmt},
+			userid=#{userid},
+			`like`=#{like},
+			dislikes=#{dislikes},
+			parent=#{parent},
+			productid=#{productid},
+			sourceid=#{sourceid}
+		where cmtid = #{cmtid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from comment 
+		where cmtid = #{cmtid}
+	]]>
+	</delete>
+	
+</mapper>

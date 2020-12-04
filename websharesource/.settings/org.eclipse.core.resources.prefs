@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/open4um/service/CommunityService.java=UTF-8
 encoding//src/main/java/open4um/service/ProductService.java=UTF-8
+encoding//src/main/java/open4um/vo/Cart.java=UTF-8
+encoding//src/main/java/open4um/vo/StateProduct.java=UTF-8

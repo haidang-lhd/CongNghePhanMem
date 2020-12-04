@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.historymoneyMapper">
+
+	<resultMap type="historymoneyVO" id="historymoneyResult">
+		<result property="hismid" column="hismid"/>
+		<result property="money" column="money"/>
+		<result property="date" column="date"/>
+		<result property="discription" column="discription"/>
+		<result property="userid" column="userid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="historymoneyResult">
+		<![CDATA[
+			select * from historymoney where userid = #{userid} order by hismid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="historymoneyResult" parameterType="int">
+		<![CDATA[
+			select * from historymoney where hismid = #{id}
+		]]>
+	</select>
+	<select id="selectSearch" resultMap="historymoneyResult" parameterType="HashMap">
+		<![CDATA[
+		select * from historymoney where userid = #{userid} And discription like CONCAT("%",#{searchInput},"%") order by hismid
+		]]>
+	</select>
+	<insert id="insert" parameterType="historymoneyVO">
+	<![CDATA[
+	insert into historymoney(money,date,discription,userid)
+	values(#{money},#{date},#{discription},#{userid})
+	]]>
+	</insert>
+	<update id="update" parameterType="historymoneyVO">
+	<![CDATA[
+		update historymoney set
+			money=#{money},
+			date=#{date},
+			discription=#{discription},
+			userid=#{userid},
+		where hismid = #{hismid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		delete from historymoney 
+		where hismid = #{hismid}
+	]]>
+	</delete>
+	
+</mapper>

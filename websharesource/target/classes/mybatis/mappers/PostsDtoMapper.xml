@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.PostsDtoMapper">
+
+	<resultMap type="postDto" id="productDtoResult">
+		<result property="proid" column="proid"/>
+		<result property="title" column="title"/>
+		<result property="username" column="username"/>
+		<result property="avatar" column="avatar"/>
+		<result property="datepost" column="datepost"/>
+		<result property="views" column="views"/>
+		<result property="content" column="content"/>
+		<result property="like" column="like"/>
+	</resultMap>
+	
+
+	
+	<select id="selectPosts" resultMap="productDtoResult">
+		<![CDATA[
+			SELECT u.username, p.content, p.image, p.`like`, p.proid, p.datepost  FROM product p, user u WHERE p.userid = u.userid  AND p.stateid = 2
+		]]>
+	</select>
+	
+	
+</mapper>

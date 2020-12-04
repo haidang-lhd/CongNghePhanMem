@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.CommentPostDto">
+
+	<resultMap type="commentProductDto" id="commentProductResult">
+		<result property="cmtid" column="cmtid"/>
+		<result property="userid" column="userid"/>
+		<result property="username" column="username"/>
+		<result property="datecmt" column="datecmt"/>
+		<result property="cmtname" column="cmtname"/>
+		<result property="parent" column="parent"/>
+		<result property="productid" column="productid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->	
+	<select id="selectCommentProduct" resultMap="commentProductResult" parameterType="int">
+		<![CDATA[
+			SELECT comment.cmtid, comment.userid, user.username, comment.datecmt, comment.cmtname, comment.parent, comment.productid from comment, user WHERE comment.userid = user.userid AND productid = #{productid}
+		]]>
+	</select>
+	
+</mapper>

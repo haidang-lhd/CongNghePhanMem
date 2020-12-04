@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.stateproductMapper">
+
+	<resultMap type="stateproductVO" id="stateproductResult">
+		<result property="stateid" column="stateid"/>
+		<result property="statename" column="statename"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="stateproductResult">
+		<![CDATA[
+			select * from stateproduct order by stateid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="stateproductResult" parameterType="int">
+		<![CDATA[
+			select * from stateproduct where stateid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="stateproductVO">
+	<![CDATA[
+	insert into stateproduct(statename)
+	values(#{statename})
+	]]>
+	</insert>
+	<update id="update" parameterType="stateproductVO">
+	<![CDATA[
+		update stateproduct set
+			statename=#{statename},
+		where stateid = #{stateid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from stateproduct 
+		where stateid = #{stateid}
+	]]>
+	</delete>
+	
+</mapper>

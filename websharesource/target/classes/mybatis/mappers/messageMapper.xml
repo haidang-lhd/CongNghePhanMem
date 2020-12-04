@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.messageMapper">
+	<resultMap type="messageVO" id="messageResult">
+		<result property="messid" column="messid"/>
+		<result property="senduserid" column="senduserid"/>
+		<result property="receiveuserid" column="receiveuserid"/>
+		<result property="content" column="content"/>
+		<result property="datemsg" column="datemsg"/>
+		<result property="username" column="username"/>
+	</resultMap>
+
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="messageResult" parameterType="int">
+		<![CDATA[
+		SELECT message.messid, message.senduserid, message.receiveuserid, user.username, message.content, message.datemsg FROM message, user 
+		WHERE message.datemsg IN 
+		(SELECT MAX(message.datemsg) AS datemsg
+	    FROM message
+	    WHERE message.senduserid = #{message.senduserid} OR message.receiveuserid = #{message.receiveuserid}
+	    GROUP BY message.senduserid, message.receiveuserid) 
+	    AND message.receiveuserid = user.userid ORDER BY datemsg DESC
+		]]>
+	</select>
+	<select id="selectMessage" resultMap="messageResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM message WHERE senduserid = #{id} OR receiveuserid = #{id}
+		]]>
+	</select>
+	<select id="selectOne" resultMap="messageResult" parameterType="int">
+		<![CDATA[
+			select * from message where messid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="messageVO">
+	<![CDATA[
+	insert into message(senduserid,receiveuserid,content)
+	values(#{senduserid},#{receiveuserid},#{content})
+	]]>
+	</insert>
+	<update id="update" parameterType="messageVO">
+	<![CDATA[
+		update message set
+			senduserid=#{senduserid},
+			receiveuserid=#{receiveuserid},
+			content=#{content},
+			datemsg=#{datemsg},
+		where messid = #{messid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from message 
+		where messid = #{messid}
+	]]>
+	</delete>
+	<select id="selectChatting" parameterType="HashMap" resultMap="messageResult">
+	<![CDATA[
+	SELECT * FROM message WHERE (senduserid = #{senduserid} AND receiveuserid = #{receiveuserid}) OR (senduserid = #{receiveuserid} AND receiveuserid = #{senduserid})
+	]]>
+	</select>
+</mapper>

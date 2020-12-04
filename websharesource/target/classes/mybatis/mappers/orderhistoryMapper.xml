@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.orderhistoryMapper">
+
+	<resultMap type="orderhistoryVO" id="orderhistoryResult">
+		<result property="orid" column="orid"/>
+		<result property="orderdate" column="orderdate"/>
+		<result property="userid" column="userid"/>
+		<result property="sourceid" column="sourceid"/>
+	</resultMap>
+	<!--author:Toan-->
+	<select id="selectOrderHistoryId" resultMap="orderhistoryResult">
+		<![CDATA[
+			SELECT * FROM orderhistory
+		]]>
+	</select>
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="orderhistoryResult">
+		<![CDATA[
+			select * from orderhistory order by orid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="orderhistoryResult" parameterType="int">
+		<![CDATA[
+			select * from orderhistory where orid = #{id}
+		]]>
+	</select>
+	
+	<select id="selectHistory" resultMap="orderhistoryResult" parameterType="HashMap">
+		<![CDATA[
+			select * from orderhistory where userid = #{userid} AND sourceid = #{sourceid}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="orderhistoryVO">
+	<![CDATA[
+	insert into orderhistory(orderdate,userid,sourceid)
+	values(#{orderdate},#{userid},#{sourceid})
+	]]>
+	</insert>
+	<update id="update" parameterType="orderhistoryVO">
+	<![CDATA[
+		update orderhistory set
+			orderdate=#{orderdate},
+			userid=#{userid},
+			sourceid=#{sourceid},
+		where orid = #{orid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from orderhistory 
+		where orid = #{orid}
+	]]>
+	</delete>
+	
+</mapper>

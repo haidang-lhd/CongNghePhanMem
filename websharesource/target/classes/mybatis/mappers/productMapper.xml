@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.productMapper">
+
+	<resultMap type="productVO" id="productResult">
+		<result property="proid" column="proid"/>
+		<result property="title" column="title"/>
+		<result property="ctgid" column="ctgid"/>
+		<result property="like" column="like"/>
+		<result property="views" column="views"/>
+		<result property="datepost" column="datepost"/>
+		<result property="content" column="content"/>
+		<result property="image" column="image"/>
+		<result property="userid" column="userid"/>
+		<result property="stateid" column="stateid"/>
+		<result property="reason" column="reason"/>
+		<result property="dislikes" column="dislikes"/>
+	</resultMap>
+	
+	<resultMap type="postDto" id="productDtoResult">
+		<result property="proid" column="proid"/>
+		<result property="title" column="title"/>
+		<result property="username" column="username"/>
+		<result property="datepost" column="datepost"/>
+		<result property="views" column="views"/>
+		<result property="content" column="content"/>
+		<result property="like" column="like"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="productResult">
+		<![CDATA[
+			select * from product where stateid = 2
+		]]>
+	</select>
+	
+	<select id="selectPost" resultMap="productDtoResult" parameterType="int">
+		<![CDATA[
+			SELECT product.proid, title, user.username, datepost, content, product.`like` FROM product, user WHERE proid = #{proid} AND product.userid = user.userid
+		]]>
+	</select>
+	
+	<select id="selectExciting" resultMap="productResult">
+		<![CDATA[
+			SELECT * FROM product where stateid = 2 ORDER BY views DESC LIMIT 8
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="productResult" parameterType="int">
+		<![CDATA[
+			select * from product where proid = #{id}
+		]]>
+	</select>
+	
+	<select id="search" resultMap="productResult" parameterType="String">
+		<![CDATA[
+			SELECT * FROM product WHERE title LIKE '%' #{key} '%' order by proid
+		]]>
+	</select>
+	
+	<select id="selectCount" resultMap="productResult" parameterType="String">
+		<![CDATA[
+			SELECT * FROM product WHERE title LIKE '%' #{key} '%'
+		]]>
+	</select>
+	
+	
+	<insert id="insert" parameterType="productVO">
+	<![CDATA[
+	insert into product(title,ctgid,like,views,datepost,content,image,userid,stateid,reason,dislikes)
+	values(#{title},#{ctgid},#{like},#{views},#{datepost},#{content},#{image},#{userid},#{stateid},#{reason},#{dislikes})
+	]]>
+	</insert>
+	
+	<insert id="insertUploadPosts" parameterType="productVO">
+	<![CDATA[
+		insert into product(title,ctgid,`like`,views,datepost,content,image,userid,stateid,dislikes)
+		values(#{title},#{ctgid},#{like},#{views},#{datepost},#{content},#{image},#{userid},#{stateid},#{dislikes})
+			
+	]]>
+	</insert>
+	
+	<update id="update" parameterType="productVO">
+	<![CDATA[
+		update product set
+			title=#{title},
+			ctgid=#{ctgid},
+			`like`=#{like},
+			views=#{views},
+			datepost=#{datepost},
+			content=#{content},
+			image=#{image},
+			userid=#{userid},
+			stateid=#{stateid},
+			reason=#{reason},
+			dislikes=#{dislikes}
+		where proid = #{proid}
+	]]>
+	</update>
+	<update id="like" parameterType="int">
+	<![CDATA[
+		UPDATE product
+	 SET product.`like` = product.`like` + 1
+	 WHERE proid = #{id};
+	]]>
+	</update>
+	<update id="dislike1" parameterType="int">
+	<![CDATA[
+		UPDATE product
+	 SET product.`dislikes` = product.`dislikes` + 1
+	 WHERE proid = #{id};
+	]]>
+	</update>
+	
+	<update id="like2" parameterType="int">
+	<![CDATA[
+		UPDATE product
+	 SET product.`like` = product.`like` -1 
+	 WHERE proid = #{id};
+	]]>
+	</update>
+	<update id="dislike2" parameterType="int">
+	<![CDATA[
+		UPDATE product
+	 SET product.`dislikes` = product.`dislikes` - 1
+	 WHERE proid = #{id};
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		delete from product 
+		where proid = #{proid}
+	]]>
+	</delete>
+	
+	<select id="countPost" resultMap="productResult" parameterType="int">
+		<![CDATA[
+			SELECT * FROM product WHERE userid = #{userid}
+		]]>
+	</select>
+	
+	<insert id="insertPro" parameterType="productVO">
+	<![CDATA[
+	insert into product(title,ctgid,datepost,content,image,userid,stateid)
+	values(#{title},#{ctgid},#{time},#{content},#{image},#{userid},#{stateid})
+	]]>
+	</insert>
+	
+</mapper>

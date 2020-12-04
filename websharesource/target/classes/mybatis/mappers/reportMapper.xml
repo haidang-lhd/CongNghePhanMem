@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.reportMapper">
+
+	<resultMap type="reportVO" id="reportResult">
+		<result property="reportid" column="reportid"/>
+		<result property="reportname" column="reportname"/>
+		<result property="userid" column="userid"/>
+		<result property="productid" column="productid"/>
+		<result property="reportdate" column="reportdate"/>
+		<result property="cmtid" column="cmtid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="reportResult">
+		<![CDATA[
+			select * from report order by reportid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="reportResult" parameterType="int">
+		<![CDATA[
+			select * from report where reportid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="reportVO">
+	<![CDATA[
+	insert into report(reportname,userid,productid,reportdate,cmtid)
+	values(#{reportname},#{userid},#{productid},#{reportdate},#{cmtid})
+	]]>
+	</insert>
+	<update id="update" parameterType="reportVO">
+	<![CDATA[
+		update report set
+			reportname=#{reportname},
+			userid=#{userid},
+			productid=#{productid},
+			reportdate=#{reportdate},
+			cmtid=#{cmtid},
+		where reportid = #{reportid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from report 
+		where reportid = #{reportid}
+	]]>
+	</delete>
+	
+</mapper>
